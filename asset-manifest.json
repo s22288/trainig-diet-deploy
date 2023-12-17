@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/trainig-diet-deploy/static/css/main.d8a3eaff.css",
+    "main.js": "/trainig-diet-deploy/static/js/main.60037550.js",
+    "static/js/787.7c576b8b.chunk.js": "/trainig-diet-deploy/static/js/787.7c576b8b.chunk.js",
+    "static/media/traininguser.jpg": "/trainig-diet-deploy/static/media/traininguser.86db3488ac180b6355ea.jpg",
+    "static/media/dieteBacground.jpg": "/trainig-diet-deploy/static/media/dieteBacground.555708a9390ff0a559b9.jpg",
+    "static/media/subscribe.jpg": "/trainig-diet-deploy/static/media/subscribe.f245a0953cd7c92b795a.jpg",
+    "static/media/megaNadwaga.jpg": "/trainig-diet-deploy/static/media/megaNadwaga.5972c387cc2f125f0261.jpg",
+    "static/media/duzanadwaga.jpg": "/trainig-diet-deploy/static/media/duzanadwaga.6a53fc5cc5ad9c2d0e6f.jpg",
+    "static/media/bardzoduzaNadwaga.jpg": "/trainig-diet-deploy/static/media/bardzoduzaNadwaga.cdb20859b6dcd329b069.jpg",
+    "static/media/niedowaga.jpg": "/trainig-diet-deploy/static/media/niedowaga.d7679930bf9d1e5ef8d2.jpg",
+    "static/media/nadwaga.jpg": "/trainig-diet-deploy/static/media/nadwaga.73392623ae3536a17805.jpg",
+    "static/media/norma.jpg": "/trainig-diet-deploy/static/media/norma.90e18a6e9b977406c943.jpg",
+    "static/media/blackMen.png": "/trainig-diet-deploy/static/media/blackMen.cb7355cf9e2feb4e7030.png",
+    "static/media/training.svg": "/trainig-diet-deploy/static/media/training.f2245c60fdb32997a28089c1f30271ed.svg",
+    "static/media/premiuLogo.svg": "/trainig-diet-deploy/static/media/premiuLogo.fadee3e00ae78accd240dc02efddf29b.svg",
+    "static/media/logo.svg": "/trainig-diet-deploy/static/media/logo.bfa422fe5735965584b5c83a921286be.svg",
+    "static/media/data.svg": "/trainig-diet-deploy/static/media/data.46821d9147b08b7bbc11cb9e5efaacfb.svg",
+    "static/media/edit.svg": "/trainig-diet-deploy/static/media/edit.2ce3a927937e082882f404f6fdcd9860.svg",
+    "static/media/userpage.svg": "/trainig-diet-deploy/static/media/userpage.e0a06668fa36cfdf256b7ab2a3be9239.svg",
+    "static/media/house.svg": "/trainig-diet-deploy/static/media/house.31a546e2e4a919432559184e2861c2b9.svg",
+    "static/media/background.svg": "/trainig-diet-deploy/static/media/background.b72069418b08ea3d0ec74ebc32e19685.svg",
+    "static/media/delete.svg": "/trainig-diet-deploy/static/media/delete.fb4f259a65ccdec4559ac799fad378bc.svg",
+    "static/media/records.svg": "/trainig-diet-deploy/static/media/records.9965399da40a9b115602.svg",
+    "static/media/note.svg": "/trainig-diet-deploy/static/media/note.6377a816cb88e163c2bc1810741ba6a1.svg",
+    "index.html": "/trainig-diet-deploy/index.html",
+    "static/media/wave.svg": "/trainig-diet-deploy/static/media/wave.6a75baeec4025df9e4a240b85db4b1cc.svg",
+    "main.d8a3eaff.css.map": "/trainig-diet-deploy/static/css/main.d8a3eaff.css.map",
+    "main.60037550.js.map": "/trainig-diet-deploy/static/js/main.60037550.js.map",
+    "787.7c576b8b.chunk.js.map": "/trainig-diet-deploy/static/js/787.7c576b8b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8a3eaff.css",
+    "static/js/main.60037550.js"
+  ]
+}
