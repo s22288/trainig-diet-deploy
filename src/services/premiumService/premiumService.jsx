@@ -1,7 +1,7 @@
 async function getPremiumUserIndicators() {
     const token = localStorage.getItem('jwtToken');
 
-    return await fetch("http://localhost:9800/premium-user/indicators", {
+    return await fetch("http://18.192.22.39:8080/premium-user/indicators", {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',

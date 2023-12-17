@@ -6,7 +6,7 @@ const GetAllExercises = (page, size, order, sortpar) => {
 
 
     return fetch(
-        `http://localhost:9800/admin-user/get-exercises?page=${page}&size=${size}&sort=${sortpar},${order}`
+        `http://18.192.22.39:8080/admin-user/get-exercises?page=${page}&size=${size}&sort=${sortpar},${order}`
         , {
             method: 'GET',
 
@@ -20,7 +20,7 @@ const GetAllExercises = (page, size, order, sortpar) => {
 }
 const EditChoosenExercise = (data) => {
     const token = localStorage.getItem('jwtToken');
-    return fetch("http://localhost:9800/admin-user/add-exercise", {
+    return fetch("http://18.192.22.39:8080/admin-user/add-exercise", {
         method: 'Post',
         headers: {
             'Accept': 'application/json',
@@ -35,7 +35,7 @@ const EditChoosenExercise = (data) => {
 const DeleteExerciseByid = (id) => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch(`http://localhost:9800/admin-user/delete-exercise/${id}`, {
+    return fetch(`http://18.192.22.39:8080/admin-user/delete-exercise/${id}`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
