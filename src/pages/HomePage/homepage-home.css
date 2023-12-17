@@ -1,0 +1,30 @@
+.home-page-maincontainer {
+    display: flex;
+    justify-content: space-between;
+    height: "100vh";
+    background-size: "cover";
+}
+
+.home-page-maincontainer>* {
+    flex: 1;
+}
+
+.home-page-maincontainer>*:first-child {
+    margin-top: 100px;
+    margin-right: 10px;
+    margin-left: 200px;
+}
+
+.home-page-maincontainer>*:last-child {
+    margin-top: 100px;
+
+    margin-left: 10px;
+    margin-right: 200px;
+}
+
+
+.home-page-background {
+    background-image: url('../../photo/background.svg');
+    height: 100vh;
+    background-size: cover;
+}

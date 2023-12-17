@@ -1,0 +1,47 @@
+ .create-account-login-form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     max-width: 300px;
+     margin: 0 auto;
+     background-color: white;
+     margin-top: 50px;
+ }
+
+ .input-field {
+     padding: 8px;
+     margin-bottom: 10px;
+     width: 100%;
+ }
+
+ .create-account-customlb {
+     font-family: "Luckiest Guy", cursive;
+     font-size: 20px;
+ }
+
+ .create-account-login-button {
+     padding: 10px 20px;
+     background-color: #4caf50;
+     color: #fff;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+
+ .create-account-login-button:hover {
+     background-color: #45a049;
+ }
+
+ create-account.p {
+     color: red;
+     margin-bottom: 10px;
+ }
+
+ create-account.label {
+     font-family: Arial, sans-serif;
+     font-size: 14px;
+     margin-bottom: 5px;
+ }
