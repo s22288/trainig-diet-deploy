@@ -1,0 +1,36 @@
+.exercise-left {
+  margin-right: 250px;
+
+  margin-top: 20px;
+}
+
+.exercise-right {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+
+}
+
+.exercise-alternatives-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+
+#parent {
+  display: flex;
+
+}
+
+.exercise-altern {
+  flex: 1;
+}
+
+.exercise.h4 {
+  color: rgb(255, 255, 255);
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}

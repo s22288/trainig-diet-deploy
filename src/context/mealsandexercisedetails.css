@@ -1,0 +1,30 @@
+.context-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.exercise-divs{
+    display: flex;
+    justify-content: center;
+}
+
+.context-card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+}
+
+.context-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.context-customText {
+    font-size: 19px;
+    color: #555;
+}

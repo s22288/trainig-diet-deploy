@@ -1,0 +1,17 @@
+.small-training-details-container {
+    margin-left: 30%;
+    margin-top: 100px;
+    background-color: #f7f7f7;
+    border-left: 50px solid #007bff;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 500px;
+    height: 300px;
+    font-size: 16px;
+}
+
+.small-training-background {
+    background-image: url('../../../photo/records.svg');
+    height: 100vh;
+    background-size: cover;
+}

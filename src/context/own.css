@@ -1,0 +1,22 @@
+.emptytrain {
+    align-items: center;
+    color: rgb(92, 62, 18);
+    font-size: 25px;
+    font-family: 'Bangers', cursive;
+    display: flex;
+}
+
+.onwTraningContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    height: "100vh";
+}
+
+.no-training-container {
+    background-image: url('../photo/records.svg');
+    height: 100vh;
+    background-size: cover;
+    
+}

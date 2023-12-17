@@ -1,0 +1,40 @@
+.machine-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.machine-info {
+    margin: 10px 0;
+}
+
+.machine-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.machine-description {
+    font-size: 18px;
+    color: #666;
+}
+
+.image-container {
+    margin: 20px 0;
+}
+
+.machine-photo {
+    max-width: 300px;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+.machine-max-weight {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}

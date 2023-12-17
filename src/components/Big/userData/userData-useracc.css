@@ -1,0 +1,92 @@
+.userData-container-account {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+
+}
+
+.userData-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Bangers', cursive;
+
+
+}
+
+.userData-title-text {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+
+
+}
+
+.customlb {
+    font-family: 'Bangers', cursive;
+
+}
+
+
+
+.userData-title-text-menu-item-text {
+    max-width: '200px';
+    overflow: 'hidden';
+    text-overflow: 'ellipsis';
+    white-space: 'nowrap';
+
+
+}
+
+.userData-image {
+    margin-right: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+.userData-login-form {
+    margin-left: 50px;
+}
+
+.userData-placeholder-image {
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.userData-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userData-content-image-container {
+    margin-right: 30px;
+}
+
+.userData-content-image-container-data-container {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.userData-user-input {
+    width: calc(100% - 10px);
+    font-family: 'Bangers', cursive;
+
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

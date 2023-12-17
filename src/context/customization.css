@@ -1,0 +1,145 @@
+.context-customize-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.context-day-data {
+    margin-left: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+
+}
+
+.context-customize-user-data {
+    margin-top: 20px;
+    margin-left: 35%;
+    align-items: center;
+
+}
+
+.context-customize-comic-form label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 18px;
+    color: #3a3a3a;
+}
+
+.context-customize-comic-form input[type="radio"] {
+    margin-right: 10px;
+}
+
+.context-customize-diet-alergens-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+
+}
+
+.context-customize-submit-button {
+    padding: 15px 30px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    height: 60px;
+}
+
+.context-customize-submit-button:hover {
+    background-color: #ff4f4f;
+}
+
+.context-customize-inputdesc {
+    height: 50px;
+}
+
+
+.context-customize-user-data .warning {
+    color: red;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 18px;
+}
+
+.context-customize-save-button {
+    margin-top: 20px;
+    margin-left: 30%;
+}
+
+.context-customize-calories {
+    margin-bottom: 10px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 20px;
+    color: #3a3a3a;
+}
+
+.context-customize-alergic {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 18px;
+    color: #3a3a3a;
+}
+
+.context-customize-comic-div {
+    .comic-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        background-color: beige;
+    }
+
+    .context-customize-comic-form label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        font-family: "Luckiest Guy", cursive;
+    }
+
+    .context-customize-comic-form label input {
+        margin-left: 5px;
+    }
+
+    .context-customize-submit-button {
+        margin-top: 10px;
+    }
+
+    .context-customize-calories {
+        font-family: "Luckiest Guy", cursive;
+        font-size: 30px;
+        color: black;
+    }
+
+    .context-customize-comic-div {
+        display: inline-block;
+        padding: 10px;
+        background-color: #2e18ac;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size: 16px;
+        color: #ffffff;
+    }
+
+    .context-customize-comic-div p {
+        margin: 0;
+        color: rgb(255, 255, 255);
+    }
+
+    .context-customize-comic-div .alergic {
+        font-weight: bold;
+    }
+
+    margin-bottom: 5px;
+}

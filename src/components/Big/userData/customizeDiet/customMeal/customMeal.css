@@ -1,0 +1,36 @@
+.custom-meal-left {
+    margin-right: 250px;
+    margin-top: 20px;
+
+}
+
+.custom-meal-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.custom-meal-alternatives-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.custom-meal-altern {
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-mea-altern {
+    flex: 1;
+}
+
+#parent {
+    display: flex;
+    align-items: flex-start;
+}

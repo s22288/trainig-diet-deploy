@@ -1,0 +1,55 @@
+.form-customlb {
+  color: black;
+  font-size: 40px;
+  font-family: 'Bangers';
+}
+
+.form-login-form {
+  width: 300px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.form-login-button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  font-family: 'Bangers', cursive;
+  background-color: #FFD700;
+  border: 2px solid #000;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.form-login-button:hover {
+  background-color: #FFA500;
+}
+
+.form-login-button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.form-user-input {
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+  background-color: #FFF8DC;
+  color: #000;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.form-user-input:focus {
+  outline: none;
+  border: 2px solid #FFA500;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}

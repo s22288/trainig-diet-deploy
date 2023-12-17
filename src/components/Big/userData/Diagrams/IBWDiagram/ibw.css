@@ -1,0 +1,27 @@
+.image-container {
+  white-space: nowrap;
+  ;
+}
+
+.image-item-blured {
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  filter: grayscale();
+  height: 300px;
+}
+
+.image-item-unblured {
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  height: 300px;
+
+
+}
+
+.diagrams-desc {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: black;
+
+}
