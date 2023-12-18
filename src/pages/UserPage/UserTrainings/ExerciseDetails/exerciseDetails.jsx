@@ -27,7 +27,7 @@ const ExcerciseDetails = () => {
 
     return (
         <div>
-            {role === 'USER' ? (
+            {role == 'USER' ? (
                 <FunctionalityNavbar />
             ) : (
                 <FunctionalityPremiumNavbar />
