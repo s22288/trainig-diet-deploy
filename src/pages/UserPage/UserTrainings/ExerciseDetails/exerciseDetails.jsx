@@ -3,31 +3,33 @@ import CustomizedRating from "../ExerciseDetails/customRaiting";
 import trainImage from "../../../../photo/traininguser.jpg";
 import FunctionalityNavbar from "../../../../components/Medium/navbar/functionalitynavbar";
 import './../../../../context/mealsandexercisedetails.css'
-import { useEffect, useState } from "react";
-import { checkUserRole } from "../../../../services/usersServices/UserService";
 import FunctionalityPremiumNavbar from "../../../../components/Medium/navbar/functionalityPremiumNavbar";
 
-const ExcerciseDetails = () => {
-    const [role, setRole] = useState('USER')
-    useEffect(() => {
 
-        setRole(checkUserRole());
-    }, [])
+const ExcerciseDetails = () => {
+
     const location = useLocation();
     const data = location.state?.data;
-    console.log(data)
 
-    if (!data) {
-        return <div>No exercise data available.</div>;
-    }
+    const [role, setRole] = useState('USER')
+    useEffect(() => {
+        checkUserRole().then((fulfilledValue) => {
+            const stringValue = String(fulfilledValue);
+            setRole(stringValue);
+        }, []);
+
+        if (!data) {
+            return <div>No exercise data available.</div>;
+        }
 
 
+    }, [location.pathname])
 
 
 
     return (
         <div>
-            {role == 'USER' ? (
+            {role === 'USER' ? (
                 <FunctionalityNavbar />
             ) : (
                 <FunctionalityPremiumNavbar />

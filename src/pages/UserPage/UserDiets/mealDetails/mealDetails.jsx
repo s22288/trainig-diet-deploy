@@ -6,19 +6,32 @@ import { useEffect, useState } from "react";
 import { checkUserRole } from "../../../../services/usersServices/UserService";
 import FunctionalityPremiumNavbar from "../../../../components/Medium/navbar/functionalityPremiumNavbar";
 const MealDetails = () => {
+
     const [role, setRole] = useState('USER')
     useEffect(() => {
+        checkUserRole().then((fulfilledValue) => {
+            const stringValue = String(fulfilledValue);
+            setRole(stringValue);
+        }, []);
 
-        setRole(checkUserRole());
-    }, [])
+        if (!data) {
+            return <div>No exercise data available.</div>;
+        }
+
+
+    }, [location.pathname])
+
     const location = useLocation();
     console.log('Location:', location);
     const data = location.state?.data;
 
-    console.log('Data:', data);
     if (!data) {
         return <div>
-            <FunctionalityNavbar />
+            {role === 'USER' ? (
+                <FunctionalityNavbar />
+            ) : (
+                <FunctionalityPremiumNavbar />
+            )}
             <p>No Dishes data available.</p></div>;
     }
 
