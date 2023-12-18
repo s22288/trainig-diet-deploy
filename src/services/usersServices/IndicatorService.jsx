@@ -1,7 +1,7 @@
 function calculateCPM() {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("http://18.192.22.39:8080/normal-user/cpm", {
+    return fetch("http://18.192.22.39:443/normal-user/cpm", {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',

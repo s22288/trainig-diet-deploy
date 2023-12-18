@@ -2,7 +2,7 @@ const GetMealByMealType = (type, goalCalories) => {
     const token = localStorage.getItem('jwtToken');
 
     return fetch(
-        `http://18.192.22.39:8080/create-diet/getMeals-byType?typeid=${type}&calories=${goalCalories}`
+        `http://18.192.22.39:443/create-diet/getMeals-byType?typeid=${type}&calories=${goalCalories}`
         , {
             headers: {
                 'Accept': 'application/json',
@@ -17,7 +17,7 @@ const GetMealByMealType = (type, goalCalories) => {
 };
 const EditChoosenMeal = (data) => {
     const token = localStorage.getItem('jwtToken');
-    return fetch("http://18.192.22.39:8080/admin-user/add-meal", {
+    return fetch("http://18.192.22.39:443/admin-user/add-meal", {
         method: 'Post',
         headers: {
             'Accept': 'application/json',
@@ -33,7 +33,7 @@ const GetAllMeals = (page, size, order) => {
     const token = localStorage.getItem('jwtToken');
 
     return fetch(
-        `http://18.192.22.39:8080/admin-user/get-meals?page=${page}&size=${size}&sort=id,${order}`
+        `http://18.192.22.39:443/admin-user/get-meals?page=${page}&size=${size}&sort=id,${order}`
         , {
             method: 'GET',
 
@@ -49,7 +49,7 @@ const GetAllMeals = (page, size, order) => {
 const DeleteMealByid = (id) => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch(`http://18.192.22.39:8080/admin-user/delete-meal/${id}`, {
+    return fetch(`http://18.192.22.39:443/admin-user/delete-meal/${id}`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',

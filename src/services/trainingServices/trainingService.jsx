@@ -73,7 +73,7 @@ const SaveTrainig = (training) => {
 const GetExerciseseByBodyPartFbw = () => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("http://18.192.22.39:8080/create-training/exercise-for-bodyparts", {
+    return fetch("http://18.192.22.39:443/create-training/exercise-for-bodyparts", {
         method: 'GET',
 
         headers: {
@@ -87,7 +87,7 @@ const GetExerciseseByBodyPartFbw = () => {
 const GetExerciseseByBodyPartPushPull = () => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("http://18.192.22.39:8080/create-training/push-pull-training", {
+    return fetch("http://18.192.22.39:443/create-training/push-pull-training", {
         method: 'GET',
 
         headers: {
@@ -101,7 +101,7 @@ const GetExerciseseByBodyPartPushPull = () => {
 const GetExerciseseByBodyPartSplit = () => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("http://18.192.22.39:8080/create-training/split-training", {
+    return fetch("http://18.192.22.39:443/create-training/split-training", {
         method: 'GET',
 
         headers: {
