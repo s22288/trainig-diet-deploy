@@ -1,7 +1,7 @@
 const GetAllTrainings = () => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("http://18.192.22.39:8080/normal-user/user-trainings", {
+    return fetch("https://diet-training-app.link/normal-user/user-trainings", {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -16,7 +16,7 @@ const GetAllTrainings = () => {
 const GetAllTrainingsWithDays = () => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("http://18.192.22.39:8080/normal-user/trainings-days", {
+    return fetch("https://diet-training-app.link/normal-user/trainings-days", {
         method: 'GET',
 
         headers: {
@@ -31,7 +31,7 @@ const GetAllTrainingsWithDays = () => {
 const FindMachineById = (machineId) => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch(`http://18.192.22.39:8080/create-training/findMachine/${machineId}`, {
+    return fetch(`https://diet-training-app.link/create-training/findMachine/${machineId}`, {
         method: 'GET',
 
         headers: {
@@ -46,7 +46,7 @@ const FindMachineById = (machineId) => {
 const AsignTrainingToDay = (asignItem, idTraining) => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch(`http://18.192.22.39:8080/create-training/assign-todate?idTraining=${idTraining}`, {
+    return fetch(`https://diet-training-app.link/create-training/assign-todate?idTraining=${idTraining}`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -59,7 +59,7 @@ const AsignTrainingToDay = (asignItem, idTraining) => {
 const SaveTrainig = (training) => {
     const token = localStorage.getItem('jwtToken');
 
-    fetch("http://18.192.22.39:8080/create-training/save-training", {
+    fetch("https://diet-training-app.link/create-training/save-training", {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -73,7 +73,7 @@ const SaveTrainig = (training) => {
 const GetExerciseseByBodyPartFbw = () => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("https://18.192.22.39:443/create-training/exercise-for-bodyparts", {
+    return fetch("https://diet-training-app.link/create-training/exercise-for-bodyparts", {
         method: 'GET',
 
         headers: {
@@ -87,7 +87,7 @@ const GetExerciseseByBodyPartFbw = () => {
 const GetExerciseseByBodyPartPushPull = () => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("https://18.192.22.39:443/create-training/push-pull-training", {
+    return fetch("https://diet-training-app.link/create-training/push-pull-training", {
         method: 'GET',
 
         headers: {
@@ -101,7 +101,7 @@ const GetExerciseseByBodyPartPushPull = () => {
 const GetExerciseseByBodyPartSplit = () => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("https://18.192.22.39:443/create-training/split-training", {
+    return fetch("https://diet-training-app.link/create-training/split-training", {
         method: 'GET',
 
         headers: {
@@ -120,7 +120,7 @@ const GetExerciseseByBodyPartSplit = () => {
 const DelteteTrainigById = (id) => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch(`https://localhost:9800/normal-user/delete-training/${id}`, {
+    return fetch(`https://diet-training-app.link/normal-user/delete-training/${id}`, {
         method: 'GET',
 
         headers: {
