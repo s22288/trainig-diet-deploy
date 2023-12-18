@@ -4,6 +4,8 @@ import trainImage from "../../../../photo/traininguser.jpg";
 import FunctionalityNavbar from "../../../../components/Medium/navbar/functionalitynavbar";
 import './../../../../context/mealsandexercisedetails.css'
 import FunctionalityPremiumNavbar from "../../../../components/Medium/navbar/functionalityPremiumNavbar";
+import { useEffect, useState } from "react";
+import { checkUserRole } from "../../../../services/usersServices/UserService";
 
 
 const ExcerciseDetails = () => {
