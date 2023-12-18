@@ -6,7 +6,9 @@ async function getUserData() {
     const token = localStorage.getItem('jwtToken');
     console.log(token)
 
-    return fetch("https://diet-training-app.link/normal-user/account-data", {
+    return await fetch("https://diet-training-app.link/normal-user/account-data", {
+
+
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -24,7 +26,7 @@ async function getPremiumUserData() {
     const token = localStorage.getItem('jwtToken');
     console.log(token)
 
-    return fetch("https://diet-training-app.link/premium-user/account-data", {
+    return await fetch("https://diet-training-app.link/premium-user/account-data", {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
