@@ -6,7 +6,7 @@ async function getUserData() {
     const token = localStorage.getItem('jwtToken');
     console.log(token)
 
-    return fetch("http://18.192.22.39:443/normal-user/account-data", {
+    return fetch("https://18.192.22.39:443/normal-user/account-data", {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -24,7 +24,7 @@ async function getPremiumUserData() {
     const token = localStorage.getItem('jwtToken');
     console.log(token)
 
-    return fetch("http://18.192.22.39:443/premium-user/account-data", {
+    return fetch("https://18.192.22.39:443/premium-user/account-data", {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -48,7 +48,7 @@ async function checkUserRole() {
 async function updatePremiumUsersData(data) {
     const token = localStorage.getItem('jwtToken');
 
-    return await fetch("http://18.192.22.39:443/premium-user/update-data", {
+    return await fetch("https://18.192.22.39:443/premium-user/update-data", {
         method: 'Post',
         headers: {
             'Accept': 'application/json',
@@ -113,7 +113,7 @@ const useAuthenticate = () => {
 async function getUserMaxes() {
     const token = localStorage.getItem('jwtToken');
 
-    return await fetch("http://18.192.22.39:443/normal-user/user-maxes", {
+    return await fetch("https://18.192.22.39:443/normal-user/user-maxes", {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -130,7 +130,7 @@ async function getUserMaxes() {
 async function updateUsersData(data) {
     const token = localStorage.getItem('jwtToken');
     console.log('data' + data)
-    return await fetch("http://18.192.22.39:443/normal-user/update-data", {
+    return await fetch("https://18.192.22.39:443/normal-user/update-data", {
         method: 'Post',
         headers: {
             'Accept': 'application/json',
@@ -145,7 +145,7 @@ async function updateUsersData(data) {
 
 async function addUserMaxes(data) {
     const token = localStorage.getItem('jwtToken');
-    return await fetch("http://18.192.22.39:443/normal-user/add-maxes", {
+    return await fetch("https://18.192.22.39:443/normal-user/add-maxes", {
         method: 'Post',
         headers: {
             'Accept': 'application/json',
@@ -163,7 +163,7 @@ const GetAllUsers = () => {
     const token = localStorage.getItem('jwtToken');
 
     return fetch(
-        `http://18.192.22.39:443/admin-user/get-users`, {
+        `https://18.192.22.39:443/admin-user/get-users`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -177,7 +177,7 @@ const GetAllUsers = () => {
 const DeleteUserById = (id) => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch(`http://18.192.22.39:443/admin-user/delete-user/${id}`, {
+    return fetch(`https://18.192.22.39:443/admin-user/delete-user/${id}`, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -204,7 +204,7 @@ const DeleteUserById = (id) => {
 //     )
 // }
 const RegisterUser = (data) => {
-    return fetch("http://18.192.22.39:443/api/v1/auth/register", {
+    return fetch("https://18.192.22.39:443/api/v1/auth/register", {
         method: 'Post',
         headers: {
             'Accept': 'application/json',
@@ -214,7 +214,7 @@ const RegisterUser = (data) => {
     )
 }
 const LoginToUserPage = (login) => {
-    return fetch("http://18.192.22.39:443/api/v1/auth/authenticate", {
+    return fetch("https://18.192.22.39:443/api/v1/auth/authenticate", {
         method: 'Post',
 
         headers: {
