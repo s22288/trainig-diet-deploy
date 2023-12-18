@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 import { checkUserRole } from "../../../../services/usersServices/UserService";
 import FunctionalityPremiumNavbar from "../../../../components/Medium/navbar/functionalityPremiumNavbar";
 const MealDetails = () => {
-
+    const location = useLocation();
     const [role, setRole] = useState('USER')
+    const data = location.state?.data;
     useEffect(() => {
         checkUserRole().then((fulfilledValue) => {
             const stringValue = String(fulfilledValue);
@@ -21,9 +22,9 @@ const MealDetails = () => {
 
     }, [location.pathname])
 
-    const location = useLocation();
-    console.log('Location:', location);
-    const data = location.state?.data;
+
+
+
 
     if (!data) {
         return <div>
