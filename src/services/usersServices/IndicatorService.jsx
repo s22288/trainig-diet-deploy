@@ -1,7 +1,7 @@
-function calculateCPM() {
+ function calculateCPM() {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("https://diet-training-app.link/normal-user/cpm", {
+    return  fetch("https://diet-training-app.link/normal-user/cpm", {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',

@@ -45,8 +45,34 @@ button {
 
 }
 
+.trainbutton {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 button:hover {
     background-color: #0056b3;
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.custom-select {
+    width: 50%;
+    max-width: 200px;
+}
+
+.custom-select-label {
+    font-size: 16px;
 }
 
 .calendar-emptytrain {

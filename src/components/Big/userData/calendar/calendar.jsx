@@ -69,11 +69,19 @@ const CalendarOfTraining = () => {
 
     }, [])
     const chooseDay = (event) => {
+        document.querySelectorAll('button').forEach(button => button.style.removeProperty('background-color'));
+
         setDay(event.currentTarget.value)
+        event.target.style.backgroundColor = 'black';
 
     }
     const handleAsign = (event) => {
+        event.preventDefault()
         setTraining(event.currentTarget.value)
+
+        // document.querySelectorAll('.trainbutton').forEach(button => button.style.removeProperty('background-color'));
+
+        event.target.style.backgroundColor = 'black';
     }
     const handleInput = (event) => {
 
@@ -84,19 +92,25 @@ const CalendarOfTraining = () => {
     }
     const HandleSubmit = (event) => {
         event.preventDefault();
-        console.log('id ' + training.id)
+        console.log('id ' + training)
         console.log(day)
+        if (data && training) {
+            assing()
+        }
+
+    }
+    const assing = () => {
         const eventTraining = {
             description: description,
             localozation: localization,
             day: day,
         };
 
-        const idTraining = 1;
 
 
 
-        AsignTrainingToDay(eventTraining, idTraining)
+
+        AsignTrainingToDay(eventTraining, training)
         addToCalendar()
     }
     return (
@@ -231,7 +245,7 @@ const CalendarOfTraining = () => {
 
                                     </CardContent>
                                     <CardActions>
-                                        <button value={item} onClick={handleAsign} className="">
+                                        <button value={item.id} onClick={handleAsign} className="trainbutton">
                                             Assign
                                         </button>
 

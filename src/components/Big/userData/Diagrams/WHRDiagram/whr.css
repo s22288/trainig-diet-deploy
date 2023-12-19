@@ -1,5 +1,6 @@
-
-
 .diagrams-desc {
-    color: black;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Bangers', cursive;
+    text-shadow: 0 0 3px #0de334, 0 0 5px #151519;
 }

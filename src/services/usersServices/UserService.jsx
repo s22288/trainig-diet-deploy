@@ -41,10 +41,14 @@ async function getPremiumUserData() {
 }
 async function checkUserRole() {
     const token = localStorage.getItem('jwtToken');
+    if (token) {
+        const role = JSON.parse(window.atob(token.split(".")[1])).role;
+        let userRole = role[0].authority
 
-    const role = JSON.parse(window.atob(token.split(".")[1])).role;
-    let userRole = role[0].authority
-    return String(userRole);
+        return String(userRole);
+    }else{
+        return "USER"
+    }
 }
 
 async function updatePremiumUsersData(data) {
@@ -145,9 +149,9 @@ async function updateUsersData(data) {
 
 
 
-async function addUserMaxes(data) {
+  function addUserMaxes(data) {
     const token = localStorage.getItem('jwtToken');
-    return await fetch("https://diet-training-app.link/normal-user/add-maxes", {
+    return   fetch("https://diet-training-app.link/normal-user/add-maxes", {
         method: 'Post',
         headers: {
             'Accept': 'application/json',

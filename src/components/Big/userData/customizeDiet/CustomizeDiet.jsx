@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material"
 
 import { Button } from "@mui/material";
 import "../../../../context/customization.css";
@@ -12,11 +13,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import FunctionalityNavbar from "../../../Medium/navbar/functionalitynavbar";
 import CustomMeal from "./customMeal/customMeal";
 import { GetMealByMealType } from "../../../../services/mealService/mealService";
-import SelectDietGoal from "./SelectInput";
 import { checkUserRole } from "../../../../services/usersServices/UserService";
 import FunctionalityPremiumNavbar from "../../../Medium/navbar/functionalityPremiumNavbar";
+import calculateCPM from "../../../../services/usersServices/IndicatorService";
+
 const DietCustomization = () => {
-    const [role, setRole] = useState('USER')
+
     const location = useLocation();
 
     useEffect(() => {
@@ -35,6 +37,10 @@ const DietCustomization = () => {
     const [options, setOptions] = useState([]);
     const [selectedOption, setSelectOption] = useState(1);
     const [goal, setGoal] = useState('lose');
+    const [role, setRole] = useState('USER')
+    const [cpm, setCpm] = useState()
+    const [cpmCopy, setCpmCopy] = useState();
+
 
 
     const [calories, setCalories] = useState(0)
@@ -62,14 +68,20 @@ const DietCustomization = () => {
 
 
     }, [])
+    useEffect(() => {
+        setCpmfunc('lose')
+    }, [])
     const HandleSubmit = (event) => {
         event.preventDefault();
         fetchUserData(selectedOption);
+
+
     };
     const handleChange = (event) => {
         event.preventDefault();
 
         setSelectOption(event.target.value);
+        console.log(event.target.value)
     };
 
 
@@ -97,8 +109,6 @@ const DietCustomization = () => {
 
     const calculateCalories = () => {
         const count = userData.map((data) => data.mealEntity.calories).reduce((start, next) => start + next, 0);
-        console.log('data' + count);
-
         setCalories(count)
         return count;
     }
@@ -123,8 +133,8 @@ const DietCustomization = () => {
 
 
     const fetchUserData = (typeId) => {
-        console.log('koalorie goal ' + goalCalories)
-        GetMealByMealType(typeId, parseInt(goalCalories))
+
+        GetMealByMealType(typeId, parseInt(cpm))
             .then((response) => {
                 if (response.ok) {
                     return response.json();
@@ -152,16 +162,55 @@ const DietCustomization = () => {
         setDescription(event.target.value);
     };
 
-    const passGoalToParent = (record) => {
-        if (record) {
-            setGoal(record);
-        }
+
+    const handleChangeCalories = (event) => {
+        event.preventDefault()
+        const selectedGoal = event.target.value;
+
+
+        setGoal(selectedGoal);
+        setCpmfunc(selectedGoal)
+
+
+    };
+
+    const setCpmfunc = (selectedGoal) => {
+        console.log(goal)
+        calculateCPM()
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Failed to fetch user data");
+                }
+            })
+            .then((d) => {
+                setCpm(d);
+                setCpmCopy(d)
+
+
+
+
+                if (selectedGoal === 'lose') {
+                    setCpmCopy((d - 300).toFixed(2))
+                    console.log(cpmCopy)
+                    console.log(d)
+
+
+                }
+
+                if (selectedGoal === 'gain') {
+                    setCpmCopy((d + 300).toFixed(2))
+
+                }
+            })
+            .catch((error) => {
+                console.error("Failed to fetch user data", error);
+            });
+
     }
-    const passCaloriesToParent = (record) => {
-        if (record !== undefined) {
-            setGoalCalories(record);
-        }
-    }
+
+
     return (
         <div>
             {role === 'USER' ? (
@@ -171,10 +220,27 @@ const DietCustomization = () => {
             )}
 
             <div className="context-customize-container">
-                <SelectDietGoal passGoalToParent={passGoalToParent} passCaloriesToParent={passCaloriesToParent} />
+
 
 
                 <form onSubmit={HandleSubmit} className="context-customize-comic-form">
+                    <div className="select-container">
+
+                        <label htmlFor="goal">Set Goal</label>
+                        <select
+                            id="goal"
+                            value={goal}
+                            onChange={handleChangeCalories}
+                            required
+                        >
+                            <option value="lose">Lose Weight</option>
+                            <option value="maintain">Maintain Weight</option>
+                            <option value="gain">Gain Weight</option>
+                        </select>
+                        {cpmCopy ? <h2>{cpmCopy} kcal</h2> : null}
+
+
+                    </div>
                     {options.map(option => (
                         <label key={option.id}>
                             <input

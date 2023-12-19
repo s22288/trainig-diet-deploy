@@ -38,11 +38,15 @@ const PremiumUserIndicators = () => {
 
     return (
         <div className="indicators">
-            <IBWDiagram data={indicators} />
+
+
+
 
             <WHRDiagram data={whr} />
-
+            <IBWDiagram data={indicators} />
             <BMIDiagram data={indicators} />
+
+
 
         </div>
     )

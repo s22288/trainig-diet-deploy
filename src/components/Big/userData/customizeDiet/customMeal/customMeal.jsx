@@ -39,7 +39,9 @@ const CustomMeal = (props) => {
                             <Typography variant="h6" color="text.secondary">
                                 {main.calories} kcal
                             </Typography>
-
+                            <Typography variant="h6" color="text.secondary">
+                                Type:    {main.mealTypeId}
+                            </Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
@@ -71,6 +73,9 @@ const CustomMeal = (props) => {
 
                                             <Typography variant="h6" color="white">
                                                 {alt && ` ${alt.calories} kcal`}
+                                            </Typography>
+                                            <Typography variant="h6" color="white">
+                                                Type:    {alt.mealTypeId}
                                             </Typography>
                                             <Button className="custom-meal-change-button"
                                                 onClick={() => handleHange(idx, alt.id)}

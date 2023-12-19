@@ -2,9 +2,9 @@ import { useState } from "react"
 import MaxesDiagram from "../../Big/userData/maxesDiagram/maxesdiagram";
 import { addUserMaxes } from "../../../services/usersServices/UserService";
 import './form-records.css'
-import Chart from 'chart.js/auto'; 
+import Chart from 'chart.js/auto';
 
-const RecordForm = () => {
+const RecordForm = (props) => {
 
     const [bench, setBench] = useState(0);
     const [pullups, setPullups] = useState(0);
@@ -22,25 +22,29 @@ const RecordForm = () => {
 
 
 
-    const handleSubmit = () => {
-
-console.log(dayOfRecord)
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(dayOfRecord)
         const record = {
             "bench": bench,
-                  "pullups": pullups,
-                  "squad": squad,
-                  "deadlift": deadlift,
-                  "dayOfRecords": dayOfRecord
-      }
+            "pullups": pullups,
+            "squad": squad,
+            "deadlift": deadlift,
+            "dayOfRecords": dayOfRecord
+        }
 
         addUserMaxes(record)
-
+        rerender()
     }
+
+    const rerender = () => {
+
+    };
 
     return (
         <div className="form-container">
 
-            <MaxesDiagram />
+            <MaxesDiagram onButtonClick={rerender} />
             <form onSubmit={handleSubmit} className="form-login-form">
                 <label className="form-customlb">Benchpress Max :</label>
                 <br></br>
@@ -49,7 +53,7 @@ console.log(dayOfRecord)
                     type="number"
                     value={bench}
                     onChange={(e) => setBench(e.target.value)}
-                    className="form-user-input"  /> 
+                    className="form-user-input" />
                 <br />
 
                 <label className="form-customlb">Pullups Max :</label>
@@ -58,7 +62,7 @@ console.log(dayOfRecord)
                     type="number"
                     value={pullups}
                     onChange={(e) => setPullups(e.target.value)}
-                    className="form-user-input"  />
+                    className="form-user-input" />
                 <br />
 
                 <label className="form-customlb">Squad Max :</label>

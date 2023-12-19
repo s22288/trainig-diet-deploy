@@ -16,7 +16,7 @@ const GetAllTrainings = () => {
 const GetAllTrainingsWithDays = () => {
     const token = localStorage.getItem('jwtToken');
 
-    return fetch("https://diet-training-app.link/normal-user/trainings-days", {
+    return fetch("https://diet-training-app.link/premium-user/trainings-days", {
         method: 'GET',
 
         headers: {
@@ -45,6 +45,8 @@ const FindMachineById = (machineId) => {
 
 const AsignTrainingToDay = (asignItem, idTraining) => {
     const token = localStorage.getItem('jwtToken');
+    console.log(asignItem)
+    console.log(idTraining)
 
     return fetch(`https://diet-training-app.link/create-training/assign-todate?idTraining=${idTraining}`, {
         method: "POST",

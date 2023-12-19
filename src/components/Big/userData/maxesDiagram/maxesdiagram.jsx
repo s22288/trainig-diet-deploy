@@ -9,7 +9,9 @@ const MaxesDiagram = () => {
     useEffect(() => {
         fetchData();
     }, []);
-
+    const rerender=(data)=>{
+        
+    }
     const fetchData = () => {
         getUserMaxes()
             .then((response) => {
@@ -27,7 +29,6 @@ const MaxesDiagram = () => {
             });
     };
 
-    console.log("userMaxes:", userMaxes);
 
     return (
         <div>

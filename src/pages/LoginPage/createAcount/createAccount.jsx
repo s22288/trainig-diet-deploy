@@ -35,7 +35,10 @@ const CreateAccountPage = () => {
         navigate('/')
     };
 
-   
+    const handleChange = (event) => {
+        const selectedsex = event.target.value;
+        setSex(selectedsex);
+    };
 
     return (
         <div
@@ -112,17 +115,34 @@ const CreateAccountPage = () => {
                     onChange={(e) => setWeight(e.target.value)}
                     required
                 />
+
+
                 <br />
 
-                <label className="create-account-customlb">Sex:</label>
-                <input
-                    type="radio"
-                    value={sex}
-                    onChange={(e) => setSex(e.target.value)}
-                    required
-                />
-                <br />
+                <label htmlFor="men">
+                    <input
+                        type="radio"
+                        id="men"
+                        value="1"
+                        name="anserw"
+                        onChange={handleChange}
+                        defaultChecked
 
+                    />
+                    Men
+                </label>
+
+                <label htmlFor="woman">
+                    <input
+                        type="radio"
+                        id="woman"
+                        value="0"
+                        name="anserw"
+                        onChange={handleChange}
+                    />
+                    Woman
+                </label>
+                <br />
                 <button type="submit" className="create-account-login-button">
                     Create Account
                 </button>
