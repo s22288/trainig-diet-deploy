@@ -123,7 +123,7 @@ const CreateAccountPage = () => {
                     <input
                         type="radio"
                         id="men"
-                        value="1"
+                        value="true"
                         name="anserw"
                         onChange={handleChange}
                         defaultChecked
@@ -136,7 +136,7 @@ const CreateAccountPage = () => {
                     <input
                         type="radio"
                         id="woman"
-                        value="0"
+                        value="false"
                         name="anserw"
                         onChange={handleChange}
                     />

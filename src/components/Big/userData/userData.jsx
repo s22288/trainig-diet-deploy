@@ -118,7 +118,7 @@ const UserAccount = () => {
                         {userData ? (
                             userData.photo ? (
 
-                                { gender } == 1 ? (
+                                { gender } == true ? (
                                     <img src={MenPhoto} className="userData-image" />
 
                                 ) :
