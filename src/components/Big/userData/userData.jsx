@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./userData-useracc.css";
 import MenPhoto from '../../../photo/blackMen.png'
+import Women from '../../../photo/blackWoman.png'
 
 import { getUserData, updateUsersData } from "../../../services/usersServices/UserService";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
@@ -11,7 +12,7 @@ const UserAccount = () => {
     const [height, setHeight] = useState('');
     const [weight, setWeight] = useState('');
     const [pal, setPal] = useState(0);
-
+    const [gender, setGender] = useState('')
 
     const [userData, setUserData] = useState(null);
     useEffect(() => {
@@ -28,7 +29,7 @@ const UserAccount = () => {
                 setUserData(data);
                 setBirthDate(data.birthDate)
                 setWeight(data.weight)
-
+                setGender(data.sex)
                 setHeight(data.height)
                 setPal(data.palfactor)
                 console.log(userData)
@@ -116,7 +117,14 @@ const UserAccount = () => {
                     <div className="userData-content-image-containerr">
                         {userData ? (
                             userData.photo ? (
-                                <img src={MenPhoto} className="userData-image" />
+
+                                { gender } == 1 ? (
+                                    <img src={MenPhoto} className="userData-image" />
+
+                                ) :
+                                    <img src={Women} className="userData-image" />
+
+
 
                             ) :
                                 <img src={MenPhoto} className="userData-image" />

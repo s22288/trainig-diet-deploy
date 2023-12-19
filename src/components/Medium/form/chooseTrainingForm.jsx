@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./choose.css";
 import backgroundSVG from "../../../photo/userpage.svg";
-import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
 
 const ChooseTraining = () => {
     const [select, setSelect] = useState("");

@@ -1,4 +1,3 @@
-import { ReactComponent as Edit } from '../../../photo/edit.svg'
 import { useLocation } from "react-router-dom";
 import AdminNavbar from '../../Medium/navbar/adminNavbar';
 import { useState } from 'react';

@@ -1,6 +1,5 @@
 import AdminMainPanel from "../../components/Big/AdminPage/adminPanel"
 import AdminNavbar from "../../components/Medium/navbar/adminNavbar"
-import backgroundSVG from "../../photo/wave.svg"
 
 const AdminPanel = () => {
     return (

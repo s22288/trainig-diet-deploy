@@ -3,7 +3,6 @@ import './calendar.css'
 import { AsignTrainingToDay, GetAllTrainings, GetAllTrainingsWithDays } from '../../../../services/trainingServices/trainingService'
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActions } from "@mui/material";
 import SmallTraining from '../../ownTrainings/smallTraining';

@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material"
 
 import { Button } from "@mui/material";
 import "../../../../context/customization.css";
 import {
-    CountCalories,
     GetAllMealTypes,
     SaveDiet,
 } from "../../../../services/dietServices/dietService"
@@ -29,7 +27,6 @@ const DietCustomization = () => {
 
 
     }, [location.pathname])
-    const [goalCalories, setGoalCalories] = useState(0);
     const navigate = useNavigate();
     const [userData, setUserData] = useState();
     const [description, setDescription] = useState('describe diet');

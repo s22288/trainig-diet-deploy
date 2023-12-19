@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 import backgroundSVG from "../../../photo/wave.svg";
 import BackNavbar from "../../../components/Medium/navbar/backNavbar";

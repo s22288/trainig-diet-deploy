@@ -4,7 +4,7 @@ import { addUserMaxes } from "../../../services/usersServices/UserService";
 import './form-records.css'
 import Chart from 'chart.js/auto';
 
-const RecordForm = (props) => {
+const RecordForm = () => {
 
     const [bench, setBench] = useState(0);
     const [pullups, setPullups] = useState(0);

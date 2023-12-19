@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 import { CardActions } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./usercard.css";
-import { BuyPremiumSubscription } from "../../../../services/usersServices/UserService";
 
 export default function UserPageCard(props) {
     let image = props.data.img;

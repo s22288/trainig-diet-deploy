@@ -4,8 +4,7 @@ import MenPhoto from '../../../photo/blackMen.png'
 
 import { getPremiumUserData, updatePremiumUsersData } from "../../../services/usersServices/UserService";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import FunctionalityNavbar from "../../Medium/navbar/functionalitynavbar";
-import PremiumUserNavbar from "../../Medium/navbar/premiuUserNavbar";
+
 import FunctionalityPremiumNavbar from "../../Medium/navbar/functionalityPremiumNavbar";
 
 const PremiumUserAccount = () => {

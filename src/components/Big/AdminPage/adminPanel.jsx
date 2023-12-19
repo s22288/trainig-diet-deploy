@@ -2,23 +2,19 @@ import * as React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import CommentIcon from '@mui/icons-material/Comment';
 import IconButton from '@mui/material/IconButton';
 import { useEffect } from 'react';
 import { DeleteMealByid, GetAllMeals } from '../../../services/mealService/mealService';
 import { DeleteUserById, GetAllUsers } from '../../../services/usersServices/UserService';
 import { DeleteExerciseByid, GetAllExercises } from '../../../services/exerciseService/exerciseService';
 import { useState } from 'react';
-import { FixedSizeList } from 'react-window';
-import ListItemButton from '@mui/material/ListItemButton';
-import Box from '@mui/material/Box';
+
 import { Grid, ListItemSecondaryAction } from '@mui/material';
 import { ReactComponent as Edit } from '../../../photo/edit.svg'
 import { ReactComponent as Delete } from '../../../photo/delete.svg'
 
 import './admin.css'
-import EditExercise from './editExercise';
-import EditMeal from './editMeal';
+
 import { Link } from 'react-router-dom';
 const AdminMainPanel = () => {
     const [Users, SetUsers] = useState([])

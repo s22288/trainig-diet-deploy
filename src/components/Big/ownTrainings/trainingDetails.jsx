@@ -12,7 +12,7 @@ import photo from '../../../photo/traininguser.jpg'
 const TrainingDetails = (props) => {
     const [isDeleted, setIsDeleted] = useState(false);
 
-    const { id, treiningType, description, maxAge, exerciseEntitySet } = props.val;
+    const { id, treiningType, description, exerciseEntitySet } = props.val;
 
     const handleDelelte = () => {
 

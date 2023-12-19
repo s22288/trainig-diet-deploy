@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { redirect } from 'react-router';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 async function getUserData() {
@@ -46,7 +45,7 @@ async function checkUserRole() {
         let userRole = role[0].authority
 
         return String(userRole);
-    }else{
+    } else {
         return "USER"
     }
 }
@@ -149,9 +148,9 @@ async function updateUsersData(data) {
 
 
 
-  function addUserMaxes(data) {
+function addUserMaxes(data) {
     const token = localStorage.getItem('jwtToken');
-    return   fetch("https://diet-training-app.link/normal-user/add-maxes", {
+    return fetch("https://diet-training-app.link/normal-user/add-maxes", {
         method: 'Post',
         headers: {
             'Accept': 'application/json',

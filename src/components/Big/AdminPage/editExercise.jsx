@@ -1,6 +1,5 @@
 import { useLocation } from "react-router-dom";
 
-import { ReactComponent as Edit } from '../../../photo/edit.svg'
 import AdminNavbar from "../../Medium/navbar/adminNavbar";
 import { useState } from "react";
 import { EditChoosenExercise } from "../../../services/exerciseService/exerciseService";
