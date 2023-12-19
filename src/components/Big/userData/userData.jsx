@@ -30,6 +30,7 @@ const UserAccount = () => {
                 setBirthDate(data.birthDate)
                 setWeight(data.weight)
                 setGender(data.sex)
+                console.log(data.sex)
                 setHeight(data.height)
                 setPal(data.palfactor)
                 console.log(userData)
@@ -118,7 +119,7 @@ const UserAccount = () => {
                         {userData ? (
                             userData.photo ? (
 
-                                gender ? (
+                                (gender == true) ? (
                                     <img src={MenPhoto} className="userData-image" />
 
                                 ) :
