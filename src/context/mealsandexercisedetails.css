@@ -5,7 +5,7 @@
     margin-top: 100px;
 }
 
-.exercise-divs{
+.exercise-divs {
     display: flex;
     justify-content: center;
 }
@@ -27,4 +27,27 @@
 .context-customText {
     font-size: 19px;
     color: #555;
+}
+
+@media only screen and (max-width: 600px) {
+    .context-details-container {
+        margin-top: 50px;
+    }
+
+    .exercise-divs {
+        flex-direction: column;
+    }
+
+    .context-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .context-card img {
+        border-radius: 5px;
+    }
+
+    .context-customText {
+        font-size: 16px;
+    }
 }

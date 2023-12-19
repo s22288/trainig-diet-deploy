@@ -35,3 +35,26 @@
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
         1px 1px 0 #000;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .exercise-left-split {
+        margin-top: 10px;
+    }
+
+    .exercise-right-split {
+        margin-top: 10px;
+    }
+
+    .exercise-alternatives-row-split {
+        gap: 20px;
+    }
+
+    #parent-split {
+        flex-direction: column;
+    }
+
+    .exercise.h4-split {
+        font-size: 18px;
+    }
+}

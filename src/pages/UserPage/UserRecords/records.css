@@ -3,3 +3,17 @@
     height: 100vh;
     background-size: cover;
 }
+
+@media only screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+    }
+  
+    .header {
+      font-size: 1.2em;
+    }
+  
+    .content {
+      font-size: 0.9em;
+    }
+  }

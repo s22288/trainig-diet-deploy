@@ -18,5 +18,20 @@
     background-image: url('../photo/records.svg');
     height: 100vh;
     background-size: cover;
-    
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .emptytrain {
+        font-size: 18px;
+    }
+
+    .onwTraningContainer {
+        margin-top: 50px;
+    }
+
+    .no-training-container {
+        height: 50vh;
+    }
 }

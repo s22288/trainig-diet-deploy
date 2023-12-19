@@ -132,3 +132,38 @@ button:hover {
     font-size: 30px;
     color: white;
 }
+
+/* Original styles for larger screens */
+.calendar-days-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 70px 100px;
+}
+
+.calendar-day {
+    width: 150px;
+    height: 200px;
+}
+
+.calendar-day-form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .calendar-days-container {
+        flex-direction: column; 
+        align-items: center; 
+        margin: 20px; 
+    }
+
+    .calendar-day {
+        width: 100%; 
+        margin: 0 0 20px 0; 
+    }
+
+    .calendar-day-form {
+        width: 100%; 
+        margin: 0; 
+    }
+}

@@ -108,3 +108,48 @@
 .train-delete-btn {
     background-color: #dc3545;
 }
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .train-app {
+      padding: 10px; 
+    }
+  
+    .training-details-container {
+      margin-top: 20px; 
+    }
+  
+    .link-perfect,
+    .delte-perfect,
+    .train-details-btn,
+    .train-delete-btn {
+      font-size: 14px; 
+      padding: 8px 16px; 
+    }
+  
+    .train-info {
+      flex-direction: column; 
+      align-items: center; 
+    }
+  
+    .train-id {
+      margin-bottom: 10px; 
+    }
+  
+    .train-photo {
+      width: 100%; 
+    }
+  
+    .train-description {
+      font-size: 14px; 
+    }
+  
+    .train-buttons {
+      flex-direction: column; 
+      align-items: center; 
+      margin-top: 10px; 
+    }
+  }
+  

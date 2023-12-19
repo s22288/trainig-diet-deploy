@@ -15,3 +15,12 @@
     height: 100vh;
     background-size: cover;
 }
+
+@media only screen and (max-width: 600px) {
+    .small-training-details-container {
+        margin-left: 0; 
+        width: 100%; 
+        border-left: none; 
+        border-top: 10px solid #007bff; 
+    }
+}

@@ -90,3 +90,60 @@
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .userData-container-account {
+      height: auto; 
+    }
+  
+    .userData-title {
+      font-size: 20px; 
+    }
+  
+    .userData-title-text {
+      font-size: 16px;
+    }
+  
+    .userData-title-text-menu-item-text {
+      max-width: 200px; 
+    }
+  
+    .userData-image {
+      margin-right: 20px; 
+      width: 150px; 
+      height: 150px; 
+    }
+  
+    .userData-login-form {
+      margin-left: 20px; 
+    }
+  
+    .userData-placeholder-image {
+      width: 150px; 
+      height: 150px; 
+      margin-top: 10px;
+    }
+  
+    .userData-content {
+      flex-direction: column; 
+      align-items: flex-start; 
+    }
+  
+    .userData-content-image-container {
+      margin-right: 0; 
+      margin-bottom: 20px; 
+    }
+  
+    .userData-content-image-container-data-container {
+      text-align: center; 
+      margin-top: 20px; 
+    }
+  
+    .userData-user-input {
+      width: 100%; 
+      font-size: 16px; 
+      margin-bottom: 10px; 
+    }
+  }
+  

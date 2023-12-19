@@ -28,3 +28,17 @@
     height: 100vh;
     background-size: cover;
 }
+
+@media only screen and (max-width: 600px) {
+    .create-account-login-form {
+        max-width: 100%;
+    }
+
+    .create-account-login-form .header {
+        font-size: 1.2em;
+    }
+
+    .create-account-login-form .content {
+        font-size: 0.9em;
+    }
+}

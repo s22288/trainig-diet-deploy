@@ -143,3 +143,72 @@
 
     margin-bottom: 5px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .context-customize-container {
+      padding: 10px;
+    }
+  
+    .context-day-data {
+      margin-left: 0; 
+      font-size: 24px; 
+    }
+  
+    .context-customize-user-data {
+      margin-left: 0; 
+    }
+  
+    .context-customize-comic-form label {
+      font-size: 16px; 
+    }
+  
+    .context-customize-diet-alergens-img {
+      height: 30px; 
+      width: 30px; 
+    }
+  
+    .context-customize-submit-button {
+      font-size: 16px;
+      height: 50px; 
+    }
+  
+    .context-customize-inputdesc {
+      height: 40px; 
+    }
+  
+    .context-customize-user-data .warning {
+      font-size: 16px; 
+    }
+  
+    .context-customize-save-button {
+      margin-top: 10px;
+      margin-left: 0; 
+    }
+  
+    .context-customize-calories {
+      font-size: 18px;
+    }
+  
+    .context-customize-alergic {
+      font-size: 16px;
+    }
+  
+    .context-customize-comic-div {
+      width: 100%; 
+    }
+  
+    .context-customize-comic-div .context-customize-comic-form label {
+      margin-top: 10px; 
+  
+    .context-customize-comic-div .context-customize-submit-button {
+      margin-top: 10px;
+    }
+  
+    .context-customize-comic-div .context-customize-calories {
+      font-size: 18px; 
+    }
+  
+    .context-customize-comic-div {
+      padding: 10px;
+  

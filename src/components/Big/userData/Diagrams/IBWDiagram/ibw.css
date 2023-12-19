@@ -25,3 +25,20 @@
   color: black;
 
 }
+
+@media only screen and (max-width: 600px) {
+  .image-container {
+    white-space: normal; 
+  }
+
+  .image-item-blured,
+  .image-item-unblured {
+    display: block; 
+    margin-right: 0; 
+    margin-bottom: 10px; 
+  }
+
+  .diagrams-desc {
+    font-size: 14px;
+  }
+}

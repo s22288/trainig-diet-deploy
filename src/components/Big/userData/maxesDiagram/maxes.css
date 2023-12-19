@@ -6,3 +6,13 @@
     width: 900px;
 
 }
+
+@media only screen and (max-width: 600px) {
+    .diagram-div {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -30,3 +30,21 @@
   .admin-button:hover {
     background-color: #45a049;
   }
+
+  @media only screen and (max-width: 600px) {
+    .admin-form-container {
+      max-width: 300px;
+      margin: 10px auto;
+      padding: 10px;
+    }
+  
+    .admin-input {
+      padding: 6px;
+      margin-bottom: 10px;
+    }
+  
+    .admin-button {
+      padding: 8px 12px;
+    }
+  }
+  
