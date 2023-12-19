@@ -20,6 +20,13 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+.clear-button {
+    background-color: red;
+    font-size: 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
 
 
 

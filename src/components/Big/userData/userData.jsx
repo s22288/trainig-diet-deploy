@@ -12,7 +12,7 @@ const UserAccount = () => {
     const [height, setHeight] = useState('');
     const [weight, setWeight] = useState('');
     const [pal, setPal] = useState(0);
-    const [gender, setGender] = useState('')
+    const [gender, setGender] = useState(true)
 
     const [userData, setUserData] = useState(null);
     useEffect(() => {
@@ -30,7 +30,7 @@ const UserAccount = () => {
                 setBirthDate(data.birthDate)
                 setWeight(data.weight)
                 setGender(data.sex)
-                console.log(data.sex)
+                console.log('dane ' + data.sex)
                 setHeight(data.height)
                 setPal(data.palfactor)
                 console.log(userData)
@@ -117,23 +117,21 @@ const UserAccount = () => {
                 <div className="userData-content">
                     <div className="userData-content-image-containerr">
                         {userData ? (
-                            userData.photo ? (
-
-                                (gender == true) ? (
-                                    <img src={MenPhoto} className="userData-image" />
-
-                                ) :
-                                    <img src={Women} className="userData-image" />
 
 
-
-                            ) :
+                            (gender == true) ? (
                                 <img src={MenPhoto} className="userData-image" />
 
+                            ) :
+                                <img src={Women} className="userData-image" />
 
-                        ) : (
-                            <div className="userData-placeholder-image" />
-                        )}
+
+
+                        )
+
+                            : (
+                                <div className="userData-placeholder-image" />
+                            )}
                     </div>
                     <div className="data-container">
                         <div className="userData-background-div"></div>
@@ -192,7 +190,7 @@ const UserAccount = () => {
 
                             type="number"
                             value={height}
-                            max={230}
+                            max={250}
                             min={100}
                             onChange={(e) => setHeight(e.target.value)}
                             className="userData-user-input" required />
@@ -203,8 +201,8 @@ const UserAccount = () => {
 
                             type="number"
                             value={weight}
-                            max={200}
-                            min={40}
+                            min={20}
+                            max={300}
                             onChange={(e) => setWeight(e.target.value)}
                             className="userData-user-input" required />
                         <br />

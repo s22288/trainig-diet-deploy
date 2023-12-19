@@ -114,7 +114,20 @@ const GetExerciseseByBodyPartSplit = () => {
         credentials: 'include'
     });
 }
+const DeleteTrainingsWithEvents = () => {
+    const token = localStorage.getItem('jwtToken');
 
+    return fetch("https://diet-training-app.link/create-training/delete-train-event", {
+        method: 'GET',
+
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+        },
+        credentials: 'include'
+    });
+}
 
 
 
@@ -141,4 +154,4 @@ const DelteteTrainigById = (id) => {
 
 }
 
-export { GetAllTrainings, DelteteTrainigById, GetExerciseseByBodyPartFbw, GetExerciseseByBodyPartSplit, GetExerciseseByBodyPartPushPull, SaveTrainig, AsignTrainingToDay, GetAllTrainingsWithDays, FindMachineById }
+export { GetAllTrainings, DelteteTrainigById, GetExerciseseByBodyPartFbw, GetExerciseseByBodyPartSplit, GetExerciseseByBodyPartPushPull, SaveTrainig, AsignTrainingToDay, GetAllTrainingsWithDays, FindMachineById, DeleteTrainingsWithEvents }

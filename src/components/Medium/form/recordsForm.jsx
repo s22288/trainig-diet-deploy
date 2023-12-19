@@ -49,7 +49,8 @@ const RecordForm = () => {
                 <label className="form-customlb">Benchpress Max :</label>
                 <br></br>
                 <input required
-
+                    min={1}
+                    max={500}
                     type="number"
                     value={bench}
                     onChange={(e) => setBench(e.target.value)}
@@ -58,18 +59,20 @@ const RecordForm = () => {
 
                 <label className="form-customlb">Pullups Max :</label>
                 <input required
-
+                    min={1}
+                    max={500}
                     type="number"
                     value={pullups}
                     onChange={(e) => setPullups(e.target.value)}
                     className="form-user-input" />
                 <br />
 
-                <label className="form-customlb">Squad Max :</label>
+                <label className="form-customlb">Squat Max :</label>
                 <br></br>
 
                 <input required
-
+                    min={1}
+                    max={500}
                     type="number"
                     value={squad}
                     onChange={(e) => setSquad(e.target.value)}
@@ -81,7 +84,8 @@ const RecordForm = () => {
                 <br></br>
 
                 <input required
-
+                    min={1}
+                    max={500}
                     type="number"
                     value={deadlift}
                     onChange={(e) => setDeadlift(e.target.value)}

@@ -62,6 +62,8 @@ const CreateAccountPage = () => {
                 <label className="create-account-customlb">Password:</label>
                 <input
                     type="password"
+                    maxLength={100}
+                    minLength={2}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
@@ -72,6 +74,9 @@ const CreateAccountPage = () => {
                 <input
                     type="text"
                     value={firstName}
+                    maxLength={100}
+
+                    minLength={2}
                     onChange={(e) => setFirstName(e.target.value)}
                     required
                 />
@@ -80,6 +85,9 @@ const CreateAccountPage = () => {
                 <input
                     type="text"
                     value={lastName}
+                    maxLength={100}
+
+                    minLength={2}
                     onChange={(e) => setLastName(e.target.value)}
                     required
                 />
@@ -94,24 +102,29 @@ const CreateAccountPage = () => {
                 <input
                     type="date"
                     value={birthDate}
+
                     onChange={(e) => setBirthDate(e.target.value)}
                     required
                 />
                 <br />
 
-                <label className="create-account-customlb">Height:</label>
+                <label className="create-account-customlb">Height in cm:</label>
                 <input
                     type="number"
                     value={height}
+                    max={250}
+                    min={100}
                     onChange={(e) => setHeight(e.target.value)}
                     required
                 />
                 <br />
 
-                <label className="create-account-customlb">Weight:</label>
+                <label className="create-account-customlb">Weight in kg:</label>
                 <input
                     type="number"
                     value={weight}
+                    min={20}
+                    max={300}
                     onChange={(e) => setWeight(e.target.value)}
                     required
                 />

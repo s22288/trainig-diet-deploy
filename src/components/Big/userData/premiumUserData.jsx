@@ -259,7 +259,7 @@ const PremiumUserAccount = () => {
 
                             type="number"
                             value={hipsCircumference}
-                            max={200}
+                            max={600}
                             min={40}
                             onChange={(e) => setHipsCircumference(e.target.value)}
                             className="userData-user-input" required />
@@ -270,8 +270,7 @@ const PremiumUserAccount = () => {
 
                             type="number"
                             value={waistCircumference}
-                            max={200}
-                            min={40}
+                            max={600} min={40}
                             onChange={(e) => setWaistCircumference(e.target.value)}
                             className="userData-user-input" required />
                         <br />
