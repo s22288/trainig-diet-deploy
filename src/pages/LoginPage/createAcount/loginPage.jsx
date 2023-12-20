@@ -58,36 +58,7 @@ const LoginPage = () => {
                 console.error('Error during registration:', error);
                 throw error;
             });
-        // DoLogin(email, password)
-        //     .then((response) => {
-        //         if (response.ok) {
-        //             return response.json();
-        //         } else {
-        //             throw new Error("Invalid credentials");
-        //         }
-        //     })
-        //     .then((data) => {
-        //         let authority = data.user.authorities[0].authority;
-        //         localStorage.setItem("isLoggedIn", "true");
 
-        //         localStorage.setItem("email", email);
-        //         localStorage.setItem("password", password);
-        //         localStorage.setItem("role", "normal");
-
-        //         if (authority === "ROLE_USER") {
-        //             navigate("/user-page", { state: data });
-        //         } else if (authority === "ROLE_ADMIN") {
-        //             navigate("/admin-page");
-        //         } else if (authority === "ROLE_PREMIUM") {
-        //             localStorage.setItem("role", "premium");
-
-        //             navigate("/premium-page");
-        //         }
-        //     })
-        //     .catch((error) => {
-        //         console.error("Login failed", error);
-        //         setError("Invalid credentials");
-        //     });
     };
 
     return (

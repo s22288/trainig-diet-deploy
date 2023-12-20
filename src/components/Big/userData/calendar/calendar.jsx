@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './calendar.css'
-import { AsignTrainingToDay, GetAllTrainings, GetAllTrainingsWithDays } from '../../../../services/trainingServices/trainingService'
+import { AsignTrainingToDay, DeleteTrainingsWithEvents, GetAllTrainings, GetAllTrainingsWithDays } from '../../../../services/trainingServices/trainingService'
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -47,7 +47,16 @@ const CalendarOfTraining = () => {
             });
 
     }
-
+    const clearData = () => {
+        DeleteTrainingsWithEvents().then(reponse => {
+            return reponse.json()
+        }).then(data => {
+            return data;
+        }).catch(error => {
+            console.error('Error during registration:', error);
+            throw error
+        })
+    }
     useEffect(() => {
         GetAllTrainings().then((response) => {
             if (response.ok) {
@@ -66,7 +75,7 @@ const CalendarOfTraining = () => {
             });
         addToCalendar()
 
-    }, [])
+    }, [addToCalendar, clearData])
     const chooseDay = (event) => {
         document.querySelectorAll('button').forEach(button => button.style.removeProperty('background-color'));
 
@@ -97,9 +106,7 @@ const CalendarOfTraining = () => {
         }
 
     }
-    const clearData = () => {
 
-    }
     const assing = () => {
         const eventTraining = {
             description: description,
@@ -111,7 +118,7 @@ const CalendarOfTraining = () => {
 
 
         AsignTrainingToDay(eventTraining, training)
-        addToCalendar()
+
     }
 
 

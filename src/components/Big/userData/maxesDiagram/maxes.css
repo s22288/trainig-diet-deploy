@@ -7,6 +7,13 @@
 
 }
 
+.refresh-but {
+    margin-left: 10%;
+    font-size: 40px;
+    background-color: yellow;
+    color: black;
+}
+
 @media only screen and (max-width: 600px) {
     .diagram-div {
         width: 10%;

@@ -20,6 +20,19 @@ async function getUserData() {
 
 
 }
+const buyPremiumAcc = () => {
+    const token = localStorage.getItem('jwtToken');
+
+    return fetch("https://diet-training-app.link/normal-user/update-premium", {
+        method: 'Post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+        }
+    }
+    )
+}
 
 async function getPremiumUserData() {
     const token = localStorage.getItem('jwtToken');
@@ -233,4 +246,4 @@ const LoginToUserPage = (login) => {
 
 
 
-export { addUserMaxes, getUserData, updateUsersData, getUserMaxes, GetAllUsers, DeleteUserById, RegisterUser, LoginToUserPage, useAuthenticate, getPremiumUserData, updatePremiumUsersData, checkUserRole }
+export { addUserMaxes, getUserData, updateUsersData, getUserMaxes, GetAllUsers, DeleteUserById, RegisterUser, LoginToUserPage, useAuthenticate, getPremiumUserData, updatePremiumUsersData, checkUserRole, buyPremiumAcc }

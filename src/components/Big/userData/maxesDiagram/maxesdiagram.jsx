@@ -5,13 +5,14 @@ import { getUserMaxes } from "../../../../services/usersServices/UserService";
 
 const MaxesDiagram = () => {
     const [userMaxes, setUserMaxes] = useState([]);
+    const refreshfunc = () => {
+        fetchData()
+    }
 
     useEffect(() => {
         fetchData();
     }, []);
-    const rerender=(data)=>{
-        
-    }
+
     const fetchData = () => {
         getUserMaxes()
             .then((response) => {
@@ -29,10 +30,10 @@ const MaxesDiagram = () => {
             });
     };
 
-
     return (
         <div>
             <LineChart data={userMaxes} />
+            <button className="refresh-but" onClick={refreshfunc}>Update</button>
         </div>
     );
 };

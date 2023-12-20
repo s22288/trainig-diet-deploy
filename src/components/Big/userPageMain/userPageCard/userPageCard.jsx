@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { CardActions } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./usercard.css";
+import { buyPremiumAcc } from "../../../../services/usersServices/UserService";
 
 export default function UserPageCard(props) {
     let image = props.data.img;
@@ -17,30 +18,20 @@ export default function UserPageCard(props) {
     const buyAccess = (event) => {
 
         event.preventDefault();
-        console.log("fetch");
-        const username = localStorage.getItem("email");
-        const password = localStorage.getItem("password");
-        if (username && password) {
-            fetch("http://localhost:8080/api/public/user-page/update-user", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: "Basic " + btoa(`${username}:${password}`),
-                },
-            })
-                .then((response) => {
-                    if (response.ok) {
-                        console.log("User updated successfully");
-                    } else {
-                        throw new Error("Failed to update user");
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error updating user:", error);
-                });
-        } else {
-            console.log("Missing username or password");
-        }
+
+
+
+        buyPremiumAcc().then((response) => {
+            if (response.ok) {
+                console.log("User updated successfully");
+            } else {
+                throw new Error("Failed to update user");
+            }
+        })
+            .catch((error) => {
+                console.error("Error updating user:", error);
+            });
+
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("email");
         localStorage.removeItem("password");
