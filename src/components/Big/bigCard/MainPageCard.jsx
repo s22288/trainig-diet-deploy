@@ -12,15 +12,18 @@ export default function MainPageCard(props) {
 
     return (
         <Card
+            className="bigcardOne"
             sx={{
                 maxWidth: 645,
                 backgroundColor: "black",
                 border: "2px solid green",
-                '@media (max-width: 600px)': {
+                ["@media (max-height: 600px)"]: {
                     maxWidth: 300,
+                    maxHeight: 200,
 
                 },
             }}
+
         >
             <CardActionArea>
                 <CardMedia
@@ -29,9 +32,10 @@ export default function MainPageCard(props) {
                     image={image}
                     alt="green iguana"
                     sx={{
-                        height: "400",
-                        '@media (max-width: 600px)': {
-                            height: 60,
+                        height: 400,
+                        ["@media (max-height: 600px)"]: {
+                            width: 300,
+                            maxHeight: 200,
 
                         },
                     }}

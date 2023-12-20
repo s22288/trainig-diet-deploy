@@ -1,0 +1,11 @@
+.bigcardOne {
+    max-width: 645px;
+    background-color: black;
+    border: 2px solid green;
+}
+
+@media (max-width: 600px) {
+    .bigcardOne {
+        max-width: 300px;
+    }
+}
