@@ -4,24 +4,37 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions } from "@mui/material";
+
 export default function MainPageCard(props) {
     let image = props.data.img;
     let title = props.data.title;
     let desc = props.data.desc;
+
     return (
         <Card
             sx={{
                 maxWidth: 645,
                 backgroundColor: "black",
                 border: "2px solid green",
+                '@media (max-width: 600px)': {
+                    maxWidth: 300,
+
+                },
             }}
         >
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="400"
+
                     image={image}
                     alt="green iguana"
+                    sx={{
+                        height: "400",
+                        '@media (max-width: 600px)': {
+                            height: 60,
+
+                        },
+                    }}
                 />
                 <CardContent>
                     <Typography
@@ -41,9 +54,7 @@ export default function MainPageCard(props) {
                             color: "white",
                             fontSize: "20px",
                             fontFamily: "Bangers, cursive",
-
                         }}
-
                         variant="body2"
                         color="text.secondary"
                     >
