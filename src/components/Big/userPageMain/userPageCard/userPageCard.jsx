@@ -43,12 +43,27 @@ export default function UserPageCard(props) {
 
     }
     return (
-        <Card sx={{ maxWidth: 800 }}>
+        <Card sx={{
+            maxWidth: 800,
+            ["@media (max-height: 600px)"]: {
+                maxWidth: 200,
+
+
+            },
+        }}>
             <CardMedia
                 component="img"
                 alt="green iguana"
                 height="340"
                 image={image}
+                sx={{
+                    ["@media (max-height: 600px)"]: {
+                        maxHeight: 100,
+
+
+                    }
+                }}
+
             />
             <CardContent>
                 <Typography
@@ -59,6 +74,12 @@ export default function UserPageCard(props) {
                         color: "black",
                         fontSize: "25px",
                         fontFamily: "'Luckiest Guy', cursive",
+                        ["@media (max-height: 600px)"]: {
+                            fontSize: "19px",
+
+    
+    
+                        }
                     }}
                 >
                     {desc}

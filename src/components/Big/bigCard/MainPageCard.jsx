@@ -34,8 +34,8 @@ export default function MainPageCard(props) {
                     sx={{
                         height: 400,
                         ["@media (max-height: 600px)"]: {
-                            width: 300,
-                            maxHeight: 200,
+                            fontSize: 50,
+                            maxHeight: 80,
 
                         },
                     }}
@@ -46,6 +46,11 @@ export default function MainPageCard(props) {
                             color: "white",
                             fontSize: "45px",
                             fontFamily: "'Luckiest Guy', cursive",
+                            ["@media (max-height: 600px)"]: {
+                                fontSize: 10,
+
+
+                            },
                         }}
                         gutterBottom
                         variant="h5"
@@ -58,6 +63,11 @@ export default function MainPageCard(props) {
                             color: "white",
                             fontSize: "20px",
                             fontFamily: "Bangers, cursive",
+                            ["@media (max-height: 600px)"]: {
+                                fontSize: 10,
+
+
+                            },
                         }}
                         variant="body2"
                         color="text.secondary"

@@ -43,6 +43,18 @@
         font-size: 0.9em;
     }
 
+    .home-page-maincontainer>*:first-child {
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
 
+    .home-page-maincontainer>*:last-child {
+        margin-top: 10px;
 
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+ 
+    
 }

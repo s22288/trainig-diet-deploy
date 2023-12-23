@@ -73,9 +73,8 @@ const CalendarOfTraining = () => {
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
             });
-        addToCalendar()
 
-    }, [addToCalendar, clearData])
+    }, addToCalendar,clearData)
     const chooseDay = (event) => {
         document.querySelectorAll('button').forEach(button => button.style.removeProperty('background-color'));
 
