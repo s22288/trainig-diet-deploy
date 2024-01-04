@@ -6,6 +6,9 @@ import { ReactComponent as NoteLogo } from "../../../photo/note.svg";
 import './smallTrainingDetails.css'
 import { useEffect, useState } from "react";
 import { checkUserRole } from "../../../services/usersServices/UserService";
+import PremiumUserAccount from "../userData/premiumUserData";
+import PremiumUserNavbar from "../../Medium/navbar/premiuUserNavbar";
+import FunctionalityPremiumNavbar from "../../Medium/navbar/functionalityPremiumNavbar";
 const SmallTrainigDetails = () => {
     const location = useLocation();
     const [role, setRole] = useState('USER')
@@ -30,7 +33,7 @@ const SmallTrainigDetails = () => {
             {role === 'USER' ? (
                 <FunctionalityNavbar />
             ) : (
-                <FunctionalityNavbar />
+                <FunctionalityPremiumNavbar />
             )}
 
             <div className="small-training-details-container" >

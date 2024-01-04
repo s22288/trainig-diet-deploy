@@ -49,7 +49,7 @@ const AllRoutes = () => {
       <Route path="/user-page/create-training/diet-customize" element={<DietCustomization />} />
       <Route path="/user-page/trainings" element={<TrainingsPage />} />
       <Route path="/user-page/diets" element={<DietsPage />} />
-      <Route path="user-page/diet/details/:id" element={<MealDetails />} />
+      <Route path="/user-page/diet/details/:id" element={<MealDetails />} />
       <Route path="/user-page/training/details/:id" element={<ExcerciseDetails />} />
       <Route path="/user-page/calendar" element={<TrainingsCalendar />} />
 

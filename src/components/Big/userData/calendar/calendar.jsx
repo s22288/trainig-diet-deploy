@@ -22,8 +22,36 @@ const CalendarOfTraining = () => {
     const [fridayTrainings, setFridayTrainings] = useState([])
     const [saturdayTrainings, setSaturdayTrainings] = useState([])
     const [sundayTrainings, setSundayTrainings] = useState([])
+    useEffect(() => {
+        GetAllTrainings().then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Failed to fetch user data");
+            }
+        })
+            .then((data) => {
+                setData(data);
+                console.log(data)
 
-    function addToCalendar() {
+            })
+            .catch((error) => {
+                console.error("Failed to fetch user data", error);
+            });
+
+
+    }, [])
+    const HandleSubmit = (event) => {
+        event.preventDefault();
+        console.log('id ' + training)
+        console.log(day)
+        if (data && training) {
+            assing()
+        }
+
+    }
+    useEffect(() => {
+        console.log('siema')
         GetAllTrainingsWithDays().then((response) => {
             if (response.ok) {
                 return response.json();
@@ -45,8 +73,8 @@ const CalendarOfTraining = () => {
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
             });
+    }, [])
 
-    }
     const clearData = () => {
         DeleteTrainingsWithEvents().then(reponse => {
             return reponse.json()
@@ -57,24 +85,7 @@ const CalendarOfTraining = () => {
             throw error
         })
     }
-    useEffect(() => {
-        GetAllTrainings().then((response) => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error("Failed to fetch user data");
-            }
-        })
-            .then((data) => {
-                setData(data);
-                console.log(data)
 
-            })
-            .catch((error) => {
-                console.error("Failed to fetch user data", error);
-            });
-
-    }, addToCalendar,clearData)
     const chooseDay = (event) => {
         document.querySelectorAll('button').forEach(button => button.style.removeProperty('background-color'));
 
@@ -96,15 +107,7 @@ const CalendarOfTraining = () => {
     const handleInputloc = (event) => {
         setLocalization(event.currentTarget.value)
     }
-    const HandleSubmit = (event) => {
-        event.preventDefault();
-        console.log('id ' + training)
-        console.log(day)
-        if (data && training) {
-            assing()
-        }
 
-    }
 
     const assing = () => {
         const eventTraining = {

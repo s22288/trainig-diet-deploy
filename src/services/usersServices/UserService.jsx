@@ -77,49 +77,42 @@ async function updatePremiumUsersData(data) {
     )
 }
 const useAuthenticate = () => {
-    const token = localStorage.getItem('jwtToken');
-    const role = JSON.parse(window.atob(token.split(".")[1])).role;
-    let userRole = role[0].authority
-    console.log(userRole)
-    const navigate = useNavigate()
-    const location = useLocation()
-    console.log(location.pathname)
-    console.log(location.pathname.includes('/details'));
+    const navigate = useNavigate();
+    const location = useLocation();
+    let token = localStorage.getItem('jwtToken');
+    let userRole;
+
+    if (token) {
+        const role = JSON.parse(window.atob(token.split(".")[1])).role;
+        userRole = role[0].authority;
+        console.log(userRole);
+        console.log(location.pathname);
+        console.log(location.pathname.includes('/details'));
+    }
 
     useEffect(() => {
         if (!token) {
             if (!['/', '/login', '/create-acc'].includes(location.pathname)) {
-                navigate('/login')
-
+                navigate('/login');
             }
-        }
-        else {
+        } else {
             if (userRole === "USER") {
-                if (!['/', '/login', '/create-acc', '/user-page', '/user-page/user-data', '/user-page/records', '/user-page/create-training', '/user-page/create-training/diet-customize', '/user-page/trainings', '/user-page/diets', '/user-page/diet/details', '/user-page/training/details', '/user-page/create-training/train-customize', '/user-page/calendar/details'].includes(location.pathname)) {
-                    {
-                        navigate('/login')
-                    }
-
+                if (!['/', '/login', '/create-acc', '/user-page','/user-page/user-data','/user-page/records','/user-page/create-training','/user-page/create-training/diet-customize','/user-page/trainings','/user-page/diets','/user-page/diet/details/:id','/user-page/training/details/:id','/user-page/create-training/train-customize'].includes(location.pathname) & !location.pathname.match(/^\/user-page\/training\/details\/\d+$/) & !location.pathname.match(/^\/user-page\/diet\/details\/\d+$/)) {
+                    navigate('/login');
                 }
-
             }
             if (userRole === "PREMIUMUSER") {
-                console.log((location.pathname).includes('/details'))
-                if ((!['/', '/login', '/create-acc', '/premium-user-page', '/premium-user-page/premium-user-data', '/user-page/records', '/premium-user-page/premium-indicators', '/user-page/create-training', '/user-page/create-training/diet-customize', '/user-page/trainings', '/user-page/diets', '/user-page/diet/details', '/user-page/training/details', '/user-page/calendar', '/user-page/create-training/train-customize', '/user-page/calendar/details'].includes(location.pathname))) {
-
-
-                    navigate('/login')
-
+                if (!['/', '/login', '/create-acc', '/premium-user-page','/premium-user-page/premium-user-data','/user-page/records','/premium-user-page/premium-indicators','/user-page/create-training','/user-page/create-training/diet-customize','/user-page/trainings','/user-page/diets','/user-page/diet/details/:id','/user-page/training/details/:id','/user-page/calendar','/user-page/calendar/details/:id','/user-page/create-training/train-customize'].includes(location.pathname) & !location.pathname.match(/^\/user-page\/training\/details\/\d+$/) & !location.pathname.match(/^\/user-page\/diet\/details\/\d+$/) &!location.pathname.match(/^\/user-page\/calendar\/details\/\d+$/)) {
+                    navigate('/login');
                 }
             }
             if (userRole === "ADMIN") {
-                if (!['/', '/login', '/create-acc', '/admin-page', '/admin-page/edit-exercise', '/admin-page/edit-meal',].includes(location.pathname)) {
-                    navigate('/login')
-
+                if (!['/', '/login', '/create-acc', '/admin-page','/admin-page/edit-exercise/:id','/admin-page/edit-meal/:id'].includes(location.pathname) & !location.pathname.match(/^\/admin-page\/edit-exercise\/\d+$/) & !location.pathname.match(/^\/admin-page\/edit-meal\/\d+$/)) {
+                    navigate('/login');
                 }
             }
         }
-    }, [location.pathname])
+    }, [location.pathname, navigate, token, userRole]);
 
 
 
