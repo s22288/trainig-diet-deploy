@@ -31,6 +31,7 @@ export default function CustomizedRating(props) {
             <StyledRating
                 value={value}
                 name="customized-color"
+                readOnly
                 defaultValue={0}
                 getLabelText={(value) => `${value} Heart${value !== 1 ? "s" : ""}`}
                 precision={0.5}

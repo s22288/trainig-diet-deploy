@@ -31,7 +31,9 @@ const PremiumUserAccount = () => {
             })
             .then((data) => {
                 setUserData(data);
-                setBirthDate(data.birthDate)
+                const birthDate = new Date(data.birthDate);
+                const formattedDate = birthDate.toISOString().split('T')[0];
+                setBirthDate(formattedDate)
                 setWeight(data.weight)
                 setHipsCircumference(data.hipsCircumference)
                 setWaistCircumference(data.waistCircumference)
@@ -156,7 +158,7 @@ const PremiumUserAccount = () => {
 
 
                                 {userData.birthDate ? (
-                                    <p className="userData-title-text">BirthDate: {userData.birthDate}</p>
+                                    <p className="userData-title-text">BirthDate: {birthDate}</p>
                                 ) : (
                                     <p className="userData-title-text">BirthDate: ?</p>
                                 )}

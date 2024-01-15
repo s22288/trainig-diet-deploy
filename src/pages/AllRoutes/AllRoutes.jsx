@@ -22,6 +22,9 @@ import EditMeal from "../../components/Big/AdminPage/editMeal"
 
 
 import PremiumUserAccount from "../../components/Big/userData/premiumUserData"
+import SaveExercise from "../../components/Big/AdminPage/addExercise"
+import SaveMeal from "../../components/Big/AdminPage/addMeal"
+import { Save } from "@mui/icons-material"
 
 const AllRoutes = () => {
 
@@ -39,6 +42,10 @@ const AllRoutes = () => {
       <Route path="/admin-page" element={<AdminPanel />} />
       <Route path="/admin-page/edit-exercise/:id" element={<EditExercise />} />
       <Route path="/admin-page/edit-meal/:id" element={<EditMeal />} />
+
+      <Route path="/admin-page/save-meal/:id" element={<SaveMeal />} />
+      <Route path="/admin-page/save-exercise/:id" element={<SaveExercise />} />
+
 
       <Route path="/user-page/user-data" element={<UserData />} />
       <Route path="/premium-user-page/premium-user-data" element={<PremiumUserAccount />} />

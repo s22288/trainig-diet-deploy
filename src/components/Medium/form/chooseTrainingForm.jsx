@@ -4,7 +4,7 @@ import "./choose.css";
 import backgroundSVG from "../../../photo/userpage.svg";
 
 const ChooseTraining = () => {
-    const [select, setSelect] = useState("");
+    const [select, setSelect] = useState("trainAndDiet");
 
     const navigate = useNavigate();
     const handleSubmit = (event) => {
@@ -39,6 +39,8 @@ const ChooseTraining = () => {
                         value="trainAndDiet"
                         name="anserw"
                         onChange={handleChange}
+                        checked={select === 'trainAndDiet'} 
+
                     />
 
                     <label className="form-choose-customlb">Only Training</label>
@@ -47,6 +49,8 @@ const ChooseTraining = () => {
                         value="train"
                         name="anserw"
                         onChange={handleChange}
+                        checked={select === 'train'} 
+
                     />
 
                     <input className=" form-choose-login-button " type="submit" value="Submit" />

@@ -34,6 +34,7 @@ const CustomExcercises = (props) => {
     <div id="parent">
 
       <div className="exercise-left">
+      <h3>Main</h3>
 
         <Card sx={{ maxWidth: 400, backgroundColor: 'gold' }}>
           <CardActionArea>
@@ -85,6 +86,7 @@ const CustomExcercises = (props) => {
       </div>
 
       <div className="exercise-right-split">
+        <h3>Alternatives</h3>
         <div className="exercise-alternatives-row">
           {exer.alternatives.map((alternative, idx) => (
             <div className="exercise-altern" key={idx}>

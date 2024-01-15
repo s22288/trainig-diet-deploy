@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DietDetails from "./dietDetails";
 import { GetAllDiets } from "../../../services/dietServices/dietService";
 import "../../../context/own.css";
+import { Link } from "react-router-dom";
 const OwnDiets = () => {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -45,8 +46,12 @@ const OwnDiets = () => {
                     ))}
                 </div>
             ) : (
-
+<div>
+    
                 <p className="emptytrain">No Diet available</p>
+                <Link to={'/user-page/create-training/diet-customize'}>Create first Diet</Link>
+
+                </div>
             )}
         </div>
     );

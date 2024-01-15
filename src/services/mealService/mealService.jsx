@@ -29,6 +29,20 @@ const EditChoosenMeal = (data) => {
     )
 }
 
+const SaveMeal = (data) => {
+    const token = localStorage.getItem('jwtToken');
+    return fetch("https://diet-training-app.link/admin-user/save-meal", {
+        method: 'Post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+        },
+        credentials: 'include', body: JSON.stringify(data)
+    }
+    )
+}
+
 const GetAllMeals = (page, size, order) => {
     const token = localStorage.getItem('jwtToken');
 
@@ -60,4 +74,4 @@ const DeleteMealByid = (id) => {
 
 }
 
-export { GetMealByMealType, GetAllMeals, DeleteMealByid, EditChoosenMeal };
+export { GetMealByMealType, GetAllMeals, DeleteMealByid, EditChoosenMeal,SaveMeal };

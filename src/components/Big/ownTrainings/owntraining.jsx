@@ -5,6 +5,7 @@ import * as React from "react";
 import { GetAllTrainings } from "../../../services/trainingServices/trainingService";
 
 import TrainingDetails from "./trainingDetails";
+import { Link } from "react-router-dom";
 
 const OwnTrainings = () => {
     const [userData, setUserData] = useState(null);
@@ -52,9 +53,10 @@ const OwnTrainings = () => {
                     ))}
                 </div>
             ) : (
-
+<div>
                 <p className="emptytrain">No Training available</p>
-
+<Link to={'/user-page/create-training/train-customize'}>Create first Training</Link>
+</div>
             )}
         </div>
     );

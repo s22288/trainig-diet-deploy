@@ -1,12 +1,11 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import AdminNavbar from "../../Medium/navbar/adminNavbar";
 import { useState } from "react";
 import { EditChoosenExercise } from "../../../services/exerciseService/exerciseService";
 
-const EditExercise = () => {
+const SaveExercise = () => {
 
-    const navigate = useNavigate();
 
     const location = useLocation();
     console.log('Location:', location);
@@ -28,7 +27,7 @@ const EditExercise = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        EditChoosenExercise(formData).then((response) => {
+        SaveExercise(formData).then((response) => {
             if (response.ok) {
                 return response.json();
             } else {
@@ -42,7 +41,6 @@ const EditExercise = () => {
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
             });
-            navigate('/admin-page');
     };
     return (
         <div>
@@ -108,11 +106,11 @@ const EditExercise = () => {
                     required
                 /><br />
 
-                <button className="admin-button" type="submit">Submit</button>
+                <button className="admin-button" type="submit">Add exercise</button>
             </form>
 
         </div>
     )
 }
 
-export default EditExercise
+export default SaveExercise

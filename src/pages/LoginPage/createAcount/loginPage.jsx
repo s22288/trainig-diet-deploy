@@ -22,9 +22,10 @@ const LoginPage = () => {
         LoginToUserPage(login).then(response => {
             if (response.status === 403) {
                 window.location.href = '/login';
+                setError('bad credits')
             }
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                setError('bad credits')
             }
             if (response.ok) {
 
@@ -55,7 +56,7 @@ const LoginPage = () => {
             return data;
         })
             .catch(error => {
-                console.error('Error during registration:', error);
+                setError('bad credits')
                 throw error;
             });
 
@@ -94,6 +95,8 @@ const LoginPage = () => {
                     Login
                 </button>
             </form>
+            {error && <p>{error}</p>}
+
         </div>
     );
 };

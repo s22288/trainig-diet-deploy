@@ -1,10 +1,14 @@
-import { useState } from "react"
 import MaxesDiagram from "../../Big/userData/maxesDiagram/maxesdiagram";
-import { addUserMaxes } from "../../../services/usersServices/UserService";
+import { addUserMaxes, getUserMaxes } from "../../../services/usersServices/UserService";
 import './form-records.css'
 import Chart from 'chart.js/auto';
+import React, { useEffect, useState } from "react";
+import LineChart from "../../Big/userData/maxesDiagram/linecharts";
+import '../../../components/Big/userData/maxesDiagram/maxes.css';
+
 
 const RecordForm = () => {
+    const [userMaxes, setUserMaxes] = useState([]);
 
     const [bench, setBench] = useState(0);
     const [pullups, setPullups] = useState(0);
@@ -12,10 +16,31 @@ const RecordForm = () => {
     const [squad, setSquad] = useState(0);
 
     const [deadlift, setDeadlift] = useState(0);
-    const [dayOfRecord, setDayOfRecords] = useState(Date.now);
+
+    const currentDate = new Date();
+    const formattedDate = currentDate.toISOString().split('T')[0];
+    const [dayOfRecord, setDayOfRecords] = useState(formattedDate);
 
 
 
+
+
+    const fetchData = () => {
+        getUserMaxes()
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Failed to fetch user data");
+                }
+            })
+            .then((data) => {
+                setUserMaxes(data);
+            })
+            .catch((error) => {
+                console.error("Failed to fetch user data", error);
+            });
+    };
 
 
 
@@ -34,17 +59,19 @@ const RecordForm = () => {
         }
 
         addUserMaxes(record)
-        rerender()
     }
 
-    const rerender = () => {
-
-    };
+    useEffect(() => {
+        fetchData();
+    }, [userMaxes]);
 
     return (
         <div className="form-container">
 
-            <MaxesDiagram onButtonClick={rerender} />
+            <div>
+                <LineChart data={userMaxes} />
+                {/* <button className="refresh-but" onClick={refreshfunc}>Update</button> */}
+            </div>
             <form onSubmit={handleSubmit} className="form-login-form">
                 <label className="form-customlb">Benchpress Max :</label>
                 <br></br>

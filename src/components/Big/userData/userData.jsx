@@ -27,10 +27,13 @@ const UserAccount = () => {
             })
             .then((data) => {
                 setUserData(data);
-                setBirthDate(data.birthDate)
+                console.log(data)
+                const birthDate = new Date(data.birthDate);
+                const formattedDate = birthDate.toISOString().split('T')[0];
+                setBirthDate(formattedDate)
                 setWeight(data.weight)
                 setGender(data.sex)
-                console.log('dane ' + data.sex)
+                console.log('dane ' + data)
                 setHeight(data.height)
                 setPal(data.palfactor)
                 console.log(userData)
@@ -149,7 +152,7 @@ const UserAccount = () => {
 
 
                                 {userData.birthDate ? (
-                                    <p className="userData-title-text">BirthDate: {userData.birthDate}</p>
+                                    <p className="userData-title-text">BirthDate: {birthDate}</p>
                                 ) : (
                                     <p className="userData-title-text">BirthDate: ?</p>
                                 )}

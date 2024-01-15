@@ -127,7 +127,25 @@ const DietCustomization = () => {
         SaveDiet(dietData);
         navigate("/user-page/create-training/train-customize");
     };
+    const saveDietAndExit = (event) => {
+        event.preventDefault();
 
+
+
+        const dietData = {
+            caloriesCount: calculateCalories(),
+            dietName: description,
+            dietGoal: goal,
+            mealEntitySet: ToMainMeals(),
+        };
+        SaveDiet(dietData);
+        if (role === 'USER') {
+            navigate("/user-page");
+          } else {
+            navigate("/premium-user-page");
+          }
+        ;
+    };
 
     const fetchUserData = (typeId) => {
 
@@ -279,8 +297,11 @@ const DietCustomization = () => {
 
                     {userData ? (
                         <div>
+                             <Button  variant="contained" onClick={saveDietAndExit}>
+                                Save and exit
+                            </Button>
                             <Button variant="contained" onClick={saveDiet}>
-                                Save
+                                Customize Training
                             </Button>
                         </div>
 

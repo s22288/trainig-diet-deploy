@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { Grid, ListItemSecondaryAction } from '@mui/material';
 import { ReactComponent as Edit } from '../../../photo/edit.svg'
 import { ReactComponent as Delete } from '../../../photo/delete.svg'
+import { ReactComponent as Add } from '../../../photo/addbutton.svg'
 
 import './admin.css'
 
@@ -176,17 +177,24 @@ const AdminMainPanel = () => {
                 <h2>Users </h2>
 
                 <div >
-                    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'white' }}>
+                    <List sx={{ width: '100%', maxWidth: 460, bgcolor: 'white' }}>
                         {Users.map((value) => (
                             <ListItem
                                 key={value}
                                 disableGutters
+                                style={{ margin: '4px 0', padding: '8px' }}
+
 
                             >
-                                <ListItemText primary={`id: ${value.id}`} />
+                                <ListItemText primary={`id: ${value.id}`}
+                                    style={{ margin: '4px 0', padding: '8px', marginRight: '-50px' }}
+                                />
 
 
-                                <ListItemText primary={`login:  ${value.email}`} />
+                                <ListItemText primary={`login:  ${value.email}`}
+                                    style={{ margin: '4px 0', padding: '8px', marginRight: '2px' }}
+
+                                />
                                 <ListItemSecondaryAction>
 
                                     <IconButton aria-label="delete" onClick={() => handleDeleteUser(value.id)}>
@@ -194,6 +202,7 @@ const AdminMainPanel = () => {
                                         <Delete />
 
                                     </IconButton>
+
                                 </ListItemSecondaryAction>
                             </ListItem>
                         ))}
@@ -205,19 +214,29 @@ const AdminMainPanel = () => {
 
 
                 <div >
-                    <List sx={{ width: '100%', maxWidth: 700, bgcolor: 'white' }}>
+                    <List sx={{ width: '100%', maxWidth: 600, bgcolor: 'white' }}>
                         {Exercises.map((value) => (
                             <ListItem
                                 key={value}
                                 disableGutters
 
                             >
-                                <ListItemText primary={`id: ${value.id}`} />
-                                <ListItemText primary={`name: ${value.name}`} />
+                                <ListItemText primary={`id: ${value.id}`}
+                                    style={{ margin: '4px 0', padding: '8px', marginRight: '-100px' }}
 
-                                <ListItemText primary={`rep: ${value.reps}`} />
-                                <ListItemText primary={`level: ${value.levelOfAdvance}`} />
+                                />
+                                <ListItemText primary={`name: ${value.name}`}
+                                    style={{ margin: '4px 0', padding: '8px', marginRight: ' - 20px' }}
+                                />
 
+                                <ListItemText primary={`rep: ${value.reps}`}
+                                    style={{ margin: '4px 0', padding: '8px', marginLeft: '-50px' }}
+
+                                />
+                                <ListItemText primary={`lvl: ${value.levelOfAdvance}`}
+                                    style={{ margin: '4px 0', padding: '8px', marginLeft: '-50px', marginRight: '15px' }}
+
+                                />
                                 <ListItemSecondaryAction>
 
                                     <IconButton aria-label="edit" >
@@ -236,6 +255,15 @@ const AdminMainPanel = () => {
 
                                     </IconButton>
 
+                                    <IconButton aria-label="delete" onClick={() => handleDeleteExercise(value.id)}>
+                                        <Link
+                                            to={`/admin-page/save-exercise/${value.id}`}
+                                            state={{ data: value }}
+                                        >
+                                            <Add />
+                                        </Link>
+                                    </IconButton>
+
                                 </ListItemSecondaryAction>
 
                             </ListItem>
@@ -251,18 +279,25 @@ const AdminMainPanel = () => {
                 <h2>Meals </h2>
 
                 <div >
-                    <List sx={{ width: '100%', maxWidth: 500, bgcolor: 'white' }}>
+                    <List sx={{ width: '100%', maxWidth: 750, bgcolor: 'white' }}>
                         {Meals.map((value) => (
                             <ListItem
                                 key={value}
                                 disableGutters
 
                             >
-                                <ListItemText primary={`id: ${value.id}`} />
+                                <ListItemText primary={`id: ${value.id}`} style={{ margin: '4px 0', padding: '8px', marginRight: '-80px' }}
 
-                                <ListItemText primary={`name: ${value.mealName}`} />
+                                />
 
-                                <ListItemText primary={`kcal: ${value.calories}`} />
+                                <ListItemText primary={`name: ${value.mealName}`}
+                                    style={{ margin: '4px 0', padding: '8px', marginLeft: '-60px' }}
+                                />
+
+                                <ListItemText primary={`kcal: ${value.calories}`}
+                                    style={{ margin: '4px 0', padding: '8px', marginLeft: '-100px' }}
+
+                                />
 
                                 <ListItemSecondaryAction>
 
@@ -279,6 +314,15 @@ const AdminMainPanel = () => {
                                     <IconButton aria-label="delete" onClick={() => handleDeleteMeal(value.id)}>
 
                                         <Delete />
+
+                                    </IconButton>
+                                    <IconButton aria-label="delete" onClick={() => handleDeleteMeal(value.id)}>
+                                        <Link
+                                            to={`/admin-page/save-meal/${value.id}`}
+                                            state={{ data: value }}
+                                        >
+                                            <Add />
+                                        </Link>
 
                                     </IconButton>
                                 </ListItemSecondaryAction>
