@@ -148,8 +148,11 @@ const BMIDiagram = (props) => {
     x.style.display = "inline-block";
 
   }
+  useEffect(() => {
+    placeUserValues();
 
-  placeUserValues();
+  })
+
 
 
   return (
