@@ -33,7 +33,7 @@ const EditChoosenExercise = (data) => {
 
 }
 
-const SaveExercise = (data) => {
+const SaveExerciseToDB = (data) => {
     const token = localStorage.getItem('jwtToken');
     return fetch("https://diet-training-app.link/admin-user/save-exercise", {
         method: 'Post',
@@ -61,4 +61,4 @@ const DeleteExerciseByid = (id) => {
 
 
 }
-export { GetAllExercises, DeleteExerciseByid, EditChoosenExercise,SaveExercise };
+export { GetAllExercises, DeleteExerciseByid, EditChoosenExercise,SaveExerciseToDB };

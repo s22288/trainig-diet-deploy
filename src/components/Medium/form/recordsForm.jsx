@@ -58,19 +58,20 @@ const RecordForm = () => {
             "dayOfRecords": dayOfRecord
         }
 
-        addUserMaxes(record)
+        addUserMaxes(record).then(()=>{
+            fetchData();
+        })
     }
 
     useEffect(() => {
         fetchData();
-    }, [userMaxes]);
+    }, []);
 
     return (
         <div className="form-container">
 
             <div>
                 <LineChart data={userMaxes} />
-                {/* <button className="refresh-but" onClick={refreshfunc}>Update</button> */}
             </div>
             <form onSubmit={handleSubmit} className="form-login-form">
                 <label className="form-customlb">Benchpress Max :</label>

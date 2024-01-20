@@ -97,17 +97,17 @@ const useAuthenticate = () => {
             }
         } else {
             if (userRole === "USER") {
-                if (!['/', '/login', '/create-acc', '/user-page','/user-page/user-data','/user-page/records','/user-page/create-training','/user-page/create-training/diet-customize','/user-page/trainings','/user-page/diets','/user-page/diet/details/:id','/user-page/training/details/:id','/user-page/create-training/train-customize'].includes(location.pathname) & !location.pathname.match(/^\/user-page\/training\/details\/\d+$/) & !location.pathname.match(/^\/user-page\/diet\/details\/\d+$/)) {
+                if (!['/', '/login', '/create-acc', '/user-page','/user-page/user-data','/user-page/records','/user-page/create-training','/user-page/create-training/diet-customize','/user-page/trainings','/user-page/diets','/user-page/diet/details/:id','/user-page/training/details/:id','/user-page/create-training/train-customize'].includes(location.pathname) && !location.pathname.match(/^\/user-page\/training\/details\/\d+$/) & !location.pathname.match(/^\/user-page\/diet\/details\/\d+$/)) {
                     navigate('/login');
                 }
             }
             if (userRole === "PREMIUMUSER") {
-                if (!['/', '/login', '/create-acc', '/premium-user-page','/premium-user-page/premium-user-data','/user-page/records','/premium-user-page/premium-indicators','/user-page/create-training','/user-page/create-training/diet-customize','/user-page/trainings','/user-page/diets','/user-page/diet/details/:id','/user-page/training/details/:id','/user-page/calendar','/user-page/calendar/details/:id','/user-page/create-training/train-customize'].includes(location.pathname) & !location.pathname.match(/^\/user-page\/training\/details\/\d+$/) & !location.pathname.match(/^\/user-page\/diet\/details\/\d+$/) &!location.pathname.match(/^\/user-page\/calendar\/details\/\d+$/)) {
+                if (!['/', '/login', '/create-acc', '/premium-user-page','/premium-user-page/premium-user-data','/user-page/records','/premium-user-page/premium-indicators','/user-page/create-training','/user-page/create-training/diet-customize','/user-page/trainings','/user-page/diets','/user-page/diet/details/:id','/user-page/training/details/:id','/user-page/calendar','/user-page/calendar/details/:id','/user-page/create-training/train-customize'].includes(location.pathname) && !location.pathname.match(/^\/user-page\/training\/details\/\d+$/) && !location.pathname.match(/^\/user-page\/diet\/details\/\d+$/) &!location.pathname.match(/^\/user-page\/calendar\/details\/\d+$/)) {
                     navigate('/login');
                 }
             }
             if (userRole === "ADMIN") {
-                if (!['/', '/login', '/create-acc', '/admin-page','/admin-page/edit-exercise/:id','/admin-page/edit-meal/:id'].includes(location.pathname) & !location.pathname.match(/^\/admin-page\/edit-exercise\/\d+$/) & !location.pathname.match(/^\/admin-page\/edit-meal\/\d+$/)) {
+                if (!['/', '/login', '/create-acc', '/admin-page','/admin-page/edit-exercise/:id','/admin-page/edit-meal/:id'].includes(location.pathname) && !location.pathname.match(/^\/admin-page\/edit-exercise\/\d+$/) &&  !location.pathname.match(/^\/admin-page\/edit-meal\/\d+$/)&& !location.pathname.match(/^\/admin-page\/save-meal\/\d+$/)  && !location.pathname.match(/^\/admin-page\/save-exercise\/\d+$/)) {
                     navigate('/login');
                 }
             }

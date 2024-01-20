@@ -1,11 +1,11 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import AdminNavbar from "../../Medium/navbar/adminNavbar";
 import { useState } from "react";
-import { EditChoosenExercise } from "../../../services/exerciseService/exerciseService";
+import { EditChoosenExercise, SaveExerciseToDB } from "../../../services/exerciseService/exerciseService";
 
 const SaveExercise = () => {
-
+        const navigate = useNavigate()
 
     const location = useLocation();
     console.log('Location:', location);
@@ -27,7 +27,7 @@ const SaveExercise = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        SaveExercise(formData).then((response) => {
+        SaveExerciseToDB(formData).then((response) => {
             if (response.ok) {
                 return response.json();
             } else {
@@ -41,6 +41,8 @@ const SaveExercise = () => {
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
             });
+            navigate('/admin-page');
+
     };
     return (
         <div>

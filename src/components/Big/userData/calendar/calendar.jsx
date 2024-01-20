@@ -22,6 +22,47 @@ const CalendarOfTraining = () => {
     const [fridayTrainings, setFridayTrainings] = useState([])
     const [saturdayTrainings, setSaturdayTrainings] = useState([])
     const [sundayTrainings, setSundayTrainings] = useState([])
+    function getTrainings() {
+        GetAllTrainings().then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Failed to fetch user data");
+            }
+        })
+            .then((data) => {
+                setData(data);
+                console.log(data)
+
+            })
+            .catch((error) => {
+                console.error("Failed to fetch user data", error);
+            });
+
+    }
+    function getTrainigsWithDays() {
+        GetAllTrainingsWithDays().then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Failed to fetch user data");
+            }
+        })
+            .then((data) => {
+
+                setMondayTrainings(data.filter((d) => d.day.day === 'mon'));
+                setTuesdayTrainings(data.filter((d) => d.day.day === 'tue'));
+                setWendsdayTrainings(data.filter((d) => d.day.day === 'wen'));
+                setThursdayTrainings(data.filter((d) => d.day.day === 'thu'));
+                setFridayTrainings(data.filter((d) => d.day.day === 'fri'));
+                setSaturdayTrainings(data.filter((d) => d.day.day === 'sat'));
+                setSundayTrainings(data.filter((d) => d.day.day === 'sun'));
+                console.log(wendsdayTrainings)
+            })
+            .catch((error) => {
+                console.error("Failed to fetch user data", error);
+            });
+    }
     useEffect(() => {
         GetAllTrainings().then((response) => {
             if (response.ok) {
@@ -46,12 +87,16 @@ const CalendarOfTraining = () => {
         console.log('id ' + training)
         console.log(day)
         if (data && training) {
-            assing()
+            assing().then(()=>{
+                getTrainigsWithDays()
+                getTrainings()
+            })
+
         }
 
     }
     useEffect(() => {
-        console.log('siema')
+
         GetAllTrainingsWithDays().then((response) => {
             if (response.ok) {
                 return response.json();
@@ -84,6 +129,7 @@ const CalendarOfTraining = () => {
             console.error('Error during registration:', error);
             throw error
         })
+
     }
 
     const chooseDay = (event) => {
@@ -119,7 +165,7 @@ const CalendarOfTraining = () => {
 
 
 
-        AsignTrainingToDay(eventTraining, training)
+        return AsignTrainingToDay(eventTraining, training)
 
     }
 

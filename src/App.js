@@ -3,7 +3,7 @@ import AllRoutes from './pages/AllRoutes/AllRoutes';
 import { useAuthenticate } from './services/usersServices/UserService';
 
 function App() {
-  // useAuthenticate()
+  useAuthenticate()
   return (
     <div className="App">
       <AllRoutes />
