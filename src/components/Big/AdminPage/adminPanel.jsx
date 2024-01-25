@@ -17,7 +17,36 @@ import { ReactComponent as Add } from '../../../photo/addbutton.svg'
 import './admin.css'
 
 import { Link } from 'react-router-dom';
+import { getAdminPrivliges } from '../../../services/adminService/adminService';
 const AdminMainPanel = () => {
+    const [privlige, setPrivlige] = useState(1);
+    const [privlige1, setPrivlige1] = useState(1);
+    const [privlige2, setPrivlige2] = useState(1);
+    const [error1, setError1] = useState('')
+    const [error2, setError2] = useState('')
+
+    const [error3, setError3] = useState('')
+    useEffect(() => {
+        getAdminPrivliges().then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Failed to fetch user data");
+            }
+        })
+            .then((data) => {
+
+                setPrivlige(data[0])
+                setPrivlige1(data[1])
+                setPrivlige2(data[2])
+
+
+            })
+            .catch((error) => {
+                console.error("Failed to fetch user data", error);
+            });
+
+    }, [])
     const [Users, SetUsers] = useState([])
     const [Meals, SetMeals] = useState([])
     const [Exercises, SetExercises] = useState([])
@@ -26,12 +55,20 @@ const AdminMainPanel = () => {
 
 
     function handleDeleteUser(id) {
+        if (privlige == 0) {
+            setError1('no privliges')
+            return
+        }
         DeleteUserById(id);
         SetUsers((prevUserData) =>
             prevUserData.filter((item) => item.id !== id)
         );
     }
     function handleDeleteExercise(id) {
+        if (privlige1 == 0) {
+            setError2('no privliges')
+            return
+        }
         DeleteExerciseByid(id);
         SetExercises((prevUserData) =>
             prevUserData.filter((item) => item.id !== id)
@@ -39,6 +76,10 @@ const AdminMainPanel = () => {
     }
 
     function handleDeleteMeal(id) {
+        if (privlige2 == 0) {
+            setError3('no privliges')
+            return
+        }
         DeleteMealByid(id);
         SetMeals((prevUserData) =>
             prevUserData.filter((item) => item.id !== id)
@@ -206,6 +247,7 @@ const AdminMainPanel = () => {
                                 </ListItemSecondaryAction>
                             </ListItem>
                         ))}
+                        <p>{error1}</p>
                     </List>
                 </div>
             </Grid>
@@ -268,6 +310,8 @@ const AdminMainPanel = () => {
 
                             </ListItem>
                         ))}
+                        <p>{error2}</p>
+
                     </List>
                     <button onClick={scrollDownExericses}>down</button>
                     <button onClick={scrollUpExericses}>up</button>
@@ -331,6 +375,7 @@ const AdminMainPanel = () => {
                     </List>
                     <button onClick={scrollDownMeals}>down</button>
                     <button onClick={scrollUpMeals}>up</button>
+                    <p>{error3}</p>
 
                 </div>
             </Grid>

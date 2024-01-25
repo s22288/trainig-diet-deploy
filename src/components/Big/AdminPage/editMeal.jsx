@@ -1,11 +1,31 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import AdminNavbar from '../../Medium/navbar/adminNavbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './edit.css'
-import { EditChoosenExercise } from '../../../services/exerciseService/exerciseService';
 import { EditChoosenMeal } from "../../../services/mealService/mealService";
+import { getAdminPrivliges } from "../../../services/adminService/adminService";
 
 const EditMeal = () => {
+    const [privlige,setPrivlige ] = useState(1);
+const [error,setError] = useState('')
+    useEffect(() => {
+        getAdminPrivliges().then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Failed to fetch user data");
+            }
+        })
+            .then((data) => {
+
+                setPrivlige(data[2])
+
+            })
+            .catch((error) => {
+                console.error("Failed to fetch user data", error);
+            });
+
+    },[])
     const location = useLocation();
     console.log('Location:', location);
     const data = location.state?.data;
@@ -28,6 +48,10 @@ const EditMeal = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(privlige ==0){
+            setError('no privilage')
+            return
+        }
         EditChoosenMeal(formData).then((response) => {
             if (response.ok) {
                 return response.json();
@@ -42,7 +66,7 @@ const EditMeal = () => {
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
             });
-            navigate('/admin-page');
+        navigate('/admin-page');
 
     };
     return (
@@ -91,6 +115,7 @@ const EditMeal = () => {
 
                 <button className='admin-button' type="submit">Submit</button>
             </form>
+            <p>{error}</p>
 
         </div>
     )
