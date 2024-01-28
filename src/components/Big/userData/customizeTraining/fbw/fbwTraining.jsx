@@ -1,9 +1,8 @@
 import { useState } from "react";
 import CustomExcercises from "../exercise/exerciseCustom";
-
 const FbwTraining = (props) => {
     const [userData, setUserData] = useState(props.data.map(u => ({ ...u, dayName: 'fbw' })));
-       
+
     const replaceData = (index, mainIndex) => {
         let userDataIndex = userData.findIndex((d) => {
             return d.exerciseEntity.id === mainIndex;
@@ -19,18 +18,7 @@ const FbwTraining = (props) => {
     };
     return (
         <div>
-            <h2>3X per week</h2>
 
-            {userData ? (
-                userData.map((item, index) => (
-                    <div key={index}>
-
-                        <CustomExcercises onreplace={replaceData} data={item} />
-                    </div>
-                ))
-            ) : (
-                <p className="context-customize-warning">Select a training type</p>
-            )}
         </div>
 
     )

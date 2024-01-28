@@ -28,17 +28,10 @@ const [error,setError] = useState('')
 
     },[])
     const navigate = useNavigate()
-    const location = useLocation();
-    console.log('Location:', location);
-    const data = location.state?.data;
-    const [formData, setFormData] = useState(data);
+   
+    const [formData, setFormData] = useState([]);
 
-    console.log(data)
-    if (!data) {
-        return <div>
-            <AdminNavbar />
-            <p>No Dishe data.</p></div>;
-    }
+ 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({

@@ -117,7 +117,6 @@ const DietCustomization = () => {
         event.preventDefault();
 
 
-
         const dietData = {
             caloriesCount: calculateCalories(),
             dietName: description,
@@ -127,8 +126,10 @@ const DietCustomization = () => {
         SaveDiet(dietData);
         navigate("/user-page/create-training/train-customize");
     };
+
     const saveDietAndExit = (event) => {
         event.preventDefault();
+        console.log("count" + calculateCalories())
 
 
 
@@ -141,14 +142,14 @@ const DietCustomization = () => {
         SaveDiet(dietData);
         if (role === 'USER') {
             navigate("/user-page");
-          } else {
+        } else {
             navigate("/premium-user-page");
-          }
+        }
         ;
     };
 
     const fetchUserData = (typeId) => {
-
+        console.log(typeId)
         GetMealByMealType(typeId, parseInt(cpm))
             .then((response) => {
                 if (response.ok) {
@@ -159,7 +160,6 @@ const DietCustomization = () => {
             })
             .then((data) => {
                 setUserData(data);
-                console.log(data)
 
 
 
@@ -297,7 +297,7 @@ const DietCustomization = () => {
 
                     {userData ? (
                         <div>
-                             <Button  variant="contained" onClick={saveDietAndExit}>
+                            <Button variant="contained" onClick={saveDietAndExit}>
                                 Save and exit
                             </Button>
                             <Button variant="contained" onClick={saveDiet}>

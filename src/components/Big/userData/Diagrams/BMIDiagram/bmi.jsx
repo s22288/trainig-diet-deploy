@@ -7,6 +7,7 @@ import img3 from '../../../../../photo/nadwaga.jpg'
 import img4 from '../../../../../photo/duzanadwaga.jpg'
 import img5 from '../../../../../photo/bardzoduzaNadwaga.jpg'
 import img6 from '../../../../../photo/megaNadwaga.jpg'
+import { Margin } from '@mui/icons-material';
 const images = [
   {
     url: img1,
@@ -128,15 +129,17 @@ const BMIDiagram = (props) => {
       console.error('Chart element not found.');
       return;
     }
-
-    let ysum = (((savedHeight) - 1.43) / 0.57) * 374;
-    ysum = Math.abs(ysum - 374);
+console.log(savedHeight)
+    let ysum = (((savedHeight) - 1.43) / 0.47) * 395
+      ;
+    ysum = Math.abs(ysum - 365);
     let yMark = ysum + chart.offsetTop + 37;
 
-    let xsum = (((savedWeight) - 36) / 88) * 734;
+    let xsum = (((savedWeight) - 36) / 88) * 600;
     let xMark = xsum + chart.offsetLeft + 32;
-    yMark = yMark - 11;
-    xMark = xMark - 11;
+    yMark = yMark ;
+    xMark = xMark - 21;
+
 
     let x = document.getElementById('x');
 

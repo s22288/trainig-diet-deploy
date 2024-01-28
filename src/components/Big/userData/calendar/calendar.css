@@ -1,4 +1,5 @@
 .calendar-days-container {
+    width: 97%;
     display: flex;
     justify-content: space-between;
     margin: 70px 100px;
@@ -6,6 +7,11 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(202, 1, 1, 0.2);
+
+}
+
+.day-custom {
+    width: 150px;
 }
 
 .calendar-day {
@@ -92,7 +98,6 @@ button:hover {
 
 .calendar-day-form label {
     color: white;
-
     font-size: 16px;
 
 }
@@ -137,7 +142,7 @@ button:hover {
 .calendar-days-container {
     display: flex;
     justify-content: space-between;
-    margin: 70px 100px;
+    margin: 0px
 }
 
 .calendar-day {
@@ -147,23 +152,24 @@ button:hover {
 
 .calendar-day-form {
     max-width: 300px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin-top: 20px;
 }
 
 @media only screen and (max-width: 600px) {
     .calendar-days-container {
-        flex-direction: column; 
-        align-items: center; 
-        margin: 20px; 
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
     }
 
     .calendar-day {
-        width: 100%; 
-        margin: 0 0 20px 0; 
+        width: 100%;
+        margin: 0 0 20px 0;
     }
 
     .calendar-day-form {
-        width: 100%; 
-        margin: 0; 
+        width: 100%;
+        margin: 0;
     }
 }

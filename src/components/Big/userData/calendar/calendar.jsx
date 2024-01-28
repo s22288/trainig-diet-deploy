@@ -50,14 +50,14 @@ const CalendarOfTraining = () => {
         })
             .then((data) => {
 
-                setMondayTrainings(data.filter((d) => d.day.day === 'mon'));
-                setTuesdayTrainings(data.filter((d) => d.day.day === 'tue'));
-                setWendsdayTrainings(data.filter((d) => d.day.day === 'wen'));
-                setThursdayTrainings(data.filter((d) => d.day.day === 'thu'));
-                setFridayTrainings(data.filter((d) => d.day.day === 'fri'));
-                setSaturdayTrainings(data.filter((d) => d.day.day === 'sat'));
-                setSundayTrainings(data.filter((d) => d.day.day === 'sun'));
-                console.log(wendsdayTrainings)
+                setMondayTrainings(data.filter((d) => d.trainingEntity.day === 'mon'));
+                setTuesdayTrainings(data.filter((d) => d.trainingEntity.day === 'tue'));
+                setWendsdayTrainings(data.filter((d) => d.trainingEntity.day === 'wen'));
+                setThursdayTrainings(data.filter((d) => d.trainingEntity.day === 'thu'));
+                setFridayTrainings(data.filter((d) => d.trainingEntity.day === 'fri'));
+                setSaturdayTrainings(data.filter((d) => d.trainingEntity.day === 'sat'));
+                setSundayTrainings(data.filter((d) => d.trainingEntity.day === 'sun'));
+                console.log(data)
             })
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
@@ -84,10 +84,10 @@ const CalendarOfTraining = () => {
     }, [])
     const HandleSubmit = (event) => {
         event.preventDefault();
-        console.log('id ' + training)
+
         console.log(day)
         if (data && training) {
-            assing().then(()=>{
+            assing().then(() => {
                 getTrainigsWithDays()
                 getTrainings()
             })
@@ -105,15 +105,15 @@ const CalendarOfTraining = () => {
             }
         })
             .then((data) => {
-
-                setMondayTrainings(data.filter((d) => d.day.day === 'mon'));
-                setTuesdayTrainings(data.filter((d) => d.day.day === 'tue'));
-                setWendsdayTrainings(data.filter((d) => d.day.day === 'wen'));
-                setThursdayTrainings(data.filter((d) => d.day.day === 'thu'));
-                setFridayTrainings(data.filter((d) => d.day.day === 'fri'));
-                setSaturdayTrainings(data.filter((d) => d.day.day === 'sat'));
-                setSundayTrainings(data.filter((d) => d.day.day === 'sun'));
-                console.log(wendsdayTrainings)
+              console.log(data)
+                
+                setMondayTrainings(data.filter((d) => d.trainingEntity.day === 'mon'));
+                setTuesdayTrainings(data.filter((d) => d.trainingEntity.day === 'tue'));
+                setWendsdayTrainings(data.filter((d) => d.trainingEntity.day === 'wen'));
+                setThursdayTrainings(data.filter((d) => d.trainingEntity.day === 'thu'));
+                setFridayTrainings(data.filter((d) => d.trainingEntity.day=== 'fri'));
+                setSaturdayTrainings(data.filter((d) => d.trainingEntity.day === 'sat'));
+                setSundayTrainings(data.filter((d) => d.trainingEntity.day === 'sun'));
             })
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
@@ -160,6 +160,7 @@ const CalendarOfTraining = () => {
             description: description,
             localozation: localization,
             day: day,
+
         };
 
 
@@ -174,14 +175,13 @@ const CalendarOfTraining = () => {
         <div>
 
             <div>
-
             </div>
 
             <div className="calendar-days-container">
                 <button className='clear-button' onClick={clearData}>Clear</button>
                 <div id="mon" className="calendar-day">
                     <button value={'mon'} onClick={chooseDay}>WEEK I</button>
-                    <div>
+                    <div className='day-custom'>
                         <Splide aria-label="My Favorite Images">
                             {mondayTrainings && mondayTrainings.map((item, index) => (
 
@@ -304,7 +304,7 @@ const CalendarOfTraining = () => {
                                     </CardContent>
                                     <CardActions>
                                         <button value={item.id} onClick={handleAsign} className="trainbutton">
-                                            Assign
+                                            Choose
                                         </button>
 
                                     </CardActions>

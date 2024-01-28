@@ -43,8 +43,8 @@ const AllRoutes = () => {
       <Route path="/admin-page/edit-exercise/:id" element={<EditExercise />} />
       <Route path="/admin-page/edit-meal/:id" element={<EditMeal />} />
 
-      <Route path="/admin-page/save-meal/:id" element={<SaveMeal />} />
-      <Route path="/admin-page/save-exercise/:id" element={<SaveExercise />} />
+      <Route path="/admin-page/save-meal" element={<SaveMeal />} />
+      <Route path="/admin-page/save-exercise" element={<SaveExercise />} />
 
 
       <Route path="/user-page/user-data" element={<UserData />} />

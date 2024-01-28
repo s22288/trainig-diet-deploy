@@ -12,6 +12,10 @@ import SplitTraining from "./split/splitTraining";
 import { checkUserRole } from "../../../../services/usersServices/UserService";
 import FunctionalityPremiumNavbar from "../../../Medium/navbar/functionalityPremiumNavbar";
 const TrainingCustomization = () => {
+
+  // klasa split
+
+
   const [role, setRole] = useState('USER')
   const location = useLocation();
 
@@ -27,6 +31,9 @@ const TrainingCustomization = () => {
   const [userData, setUserData] = useState();
   const [userDataSplit, setUserDataSplit] = useState();
   const [userDataPushPUll, setUserDataPushPUll] = useState();
+  const [firstDay, setFirstDay] = useState([]);
+  const [secondDay, setSecondDay] = useState([]);
+  const [thirdDay, setThirdDay] = useState([]);
 
   const navigate = useNavigate();
   const [description, setDescription] = useState('trainin desc');
@@ -89,6 +96,35 @@ const TrainingCustomization = () => {
     }
     setUserData(updatedUserData);
   };
+
+
+  const replaceData2 = (index, mainIndex) => {
+    let userDataIndex = secondDay.findIndex((d) => {
+      return d.exerciseEntity.id === mainIndex;
+    });
+    const updatedUserData = [...secondDay];
+    const alternatives = updatedUserData[userDataIndex].alternatives;
+    if (alternatives.length > 0) {
+      let copy = updatedUserData[userDataIndex].exerciseEntity;
+      updatedUserData[userDataIndex].exerciseEntity = alternatives[index];
+      updatedUserData[userDataIndex].alternatives[index] = copy;
+    }
+    setUserData(updatedUserData);
+  };
+
+  const replaceData3 = (index, mainIndex) => {
+    let userDataIndex = thirdDay.findIndex((d) => {
+      return d.exerciseEntity.id === mainIndex;
+    });
+    const updatedUserData = [...thirdDay];
+    const alternatives = updatedUserData[userDataIndex].alternatives;
+    if (alternatives.length > 0) {
+      let copy = updatedUserData[userDataIndex].exerciseEntity;
+      updatedUserData[userDataIndex].exerciseEntity = alternatives[index];
+      updatedUserData[userDataIndex].alternatives[index] = copy;
+    }
+    setUserData(updatedUserData);
+  };
   const fetchUserData = () => {
 
     if (excercise === 'FBW') {
@@ -127,7 +163,9 @@ const TrainingCustomization = () => {
         })
         .then((data) => {
           setUserDataPushPUll(data);
-
+          setFirstDay(data['one'])
+          setSecondDay(data['two'])
+          setThirdDay(data['three'])
 
 
         })
@@ -150,7 +188,9 @@ const TrainingCustomization = () => {
         })
         .then((data) => {
           setUserDataSplit(data);
-
+          setFirstDay(data['one'])
+          setSecondDay(data['two'])
+          setThirdDay(data['three'])
 
 
         })
@@ -223,16 +263,78 @@ const TrainingCustomization = () => {
 
 
           {excercise == 'FBW' && userData ? (
+            <div>
 
-            <FbwTraining data={userData} />
+              <h2>3X per week</h2>
+
+              {userData ? (
+                userData.map((item, index) => (
+                  <div key={index}>
+
+                    <CustomExcercises onreplace={replaceData} data={item} />
+                  </div>
+                ))
+              ) : (
+                <p className="context-customize-warning">Select a training type</p>
+              )}
+            </div>
           ) : (
             <p className="context-customize-warning"></p>
           )}
 
 
           {excercise == 'SPLIT' && userDataSplit ? (
+            <div>
 
-            <SplitTraining data={userDataSplit} />
+              <Splide aria-label="My Favorite Images">
+                <SplideSlide >
+                  <h3 style={{ alignItems: 'center', display: 'flex', justifyContent: 'center' }}> Day 1</h3>
+
+                  {firstDay ? (
+                    firstDay.map((item, index) => (
+                      <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <CustomExcercises onreplace={replaceData} data={item} />
+
+
+                      </div>
+                    ))
+                  ) : (
+                    <p className="context-customize-warning">Select a training type</p>
+                  )}
+                </SplideSlide>
+                <SplideSlide>
+                  <h3 style={{ alignItems: 'center', display: 'flex', justifyContent: 'center' }}> Day 2</h3>
+                  {secondDay ? (
+                    secondDay.map((item, index) => (
+                      <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <CustomExcercises onreplace={replaceData2} data={item} />
+
+
+                      </div>
+                    ))
+                  ) : (
+                    <p className="context-customize-warning">Select a training type</p>
+                  )}
+                </SplideSlide>
+                <SplideSlide>
+
+                  <h3 style={{ alignItems: 'center', display: 'flex', justifyContent: 'center' }}> Day 3</h3>
+
+                  {thirdDay ? (
+                    thirdDay.map((item, index) => (
+                      <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+
+                        <CustomExcercises onreplace={replaceData3} data={item} />
+
+
+                      </div>
+                    ))
+                  ) : (
+                    <p className="context-customize-warning">Select a training type</p>
+                  )}
+                </SplideSlide>
+              </Splide>
+            </div>
           ) : (
             <p className="context-customize-warning"></p>
           )}
@@ -241,7 +343,57 @@ const TrainingCustomization = () => {
 
           {excercise == 'PUSHPULL' && userDataPushPUll ? (
 
-            <SplitTraining data={userDataPushPUll} />
+            <div>
+
+              <Splide aria-label="My Favorite Images">
+                <SplideSlide >
+                  <h3 style={{ alignItems: 'center', display: 'flex', justifyContent: 'center' }}> Day 1</h3>
+
+                  {firstDay ? (
+                    firstDay.map((item, index) => (
+                      <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <CustomExcercises onreplace={replaceData} data={item} />
+
+
+                      </div>
+                    ))
+                  ) : (
+                    <p className="context-customize-warning">Select a training type</p>
+                  )}
+                </SplideSlide>
+                <SplideSlide>
+                  <h3 style={{ alignItems: 'center', display: 'flex', justifyContent: 'center' }}> Day 2</h3>
+                  {secondDay ? (
+                    secondDay.map((item, index) => (
+                      <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <CustomExcercises onreplace={replaceData2} data={item} />
+
+
+                      </div>
+                    ))
+                  ) : (
+                    <p className="context-customize-warning">Select a training type</p>
+                  )}
+                </SplideSlide>
+                <SplideSlide>
+
+                  <h3 style={{ alignItems: 'center', display: 'flex', justifyContent: 'center' }}> Day 3</h3>
+
+                  {thirdDay ? (
+                    thirdDay.map((item, index) => (
+                      <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+
+                        <CustomExcercises onreplace={replaceData3} data={item} />
+
+
+                      </div>
+                    ))
+                  ) : (
+                    <p className="context-customize-warning">Select a training type</p>
+                  )}
+                </SplideSlide>
+              </Splide>
+            </div>
           ) : (
             <p className="context-customize-warning"></p>
           )}

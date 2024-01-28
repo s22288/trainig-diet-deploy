@@ -14,8 +14,8 @@ const PremiumUserAccount = () => {
     const [pal, setPal] = useState(0);
     const [hipsCircumference, setHipsCircumference] = useState(0);
     const [waistCircumference, setWaistCircumference] = useState(0);
-    const [startSubscription, setStartSubscription] = useState(new Date());
-    const [endSubscription, setEndSubscription] = useState(startSubscription + 1);
+    const [startSubscription, setStartSubscription] = useState('');
+    const [endSubscription, setEndSubscription] = useState('');
 
 
     const [userData, setUserData] = useState(null);
@@ -34,12 +34,16 @@ const PremiumUserAccount = () => {
                 const birthDate = new Date(data.birthDate);
                 const formattedDate = birthDate.toISOString().split('T')[0];
                 setBirthDate(formattedDate)
+                setStartSubscription(new Date().toISOString().split('T')[0])
+                
+                setEndSubscription(new Date().toISOString().split('T')[0])
                 setWeight(data.weight)
                 setHipsCircumference(data.hipsCircumference)
                 setWaistCircumference(data.waistCircumference)
                 setHeight(data.height)
                 setPal(data.palfactor)
                 console.log(userData)
+
 
             })
             .catch((error) => {
@@ -127,6 +131,7 @@ const PremiumUserAccount = () => {
 
 
 
+
             <div className="userData-content-image-container-data-container">
                 <div className="userData-content">
                     <div className="userData-content-image-containerr">
@@ -189,13 +194,13 @@ const PremiumUserAccount = () => {
                                     <p className="userData-title-text">waistCircumference: ?</p>
                                 )}
                                 {userData.startSubscription ? (
-                                    <p className="userData-title-text">Start Date: {userData.startSubscription}</p>
+                                    <p className="userData-title-text">Start Date: {startSubscription}</p>
                                 ) : (
                                     <p className="userData-title-text">Start Date: ?</p>
                                 )}
 
                                 {userData.endSubscription ? (
-                                    <p className="userData-title-text">End date: {userData.endSubscription}</p>
+                                    <p className="userData-title-text">End date: {endSubscription}</p>
                                 ) : (
                                     <p className="userData-title-text">End date: ?</p>
                                 )}

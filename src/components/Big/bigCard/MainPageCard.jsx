@@ -12,9 +12,11 @@ export default function MainPageCard(props) {
 
     return (
         <Card
-            className="bigcardOne"
+            // className="bigcardOne"
             sx={{
                 maxWidth: 645,
+                maxHeight: 620,
+
                 backgroundColor: "black",
                 border: "2px solid green",
                 ["@media (max-height: 600px)"]: {
@@ -32,7 +34,7 @@ export default function MainPageCard(props) {
                     image={image}
                     alt="green iguana"
                     sx={{
-                        height: 400,
+                        height: 300,
                         ["@media (max-height: 600px)"]: {
                             fontSize: 50,
                             maxHeight: 80,

@@ -254,7 +254,12 @@ const AdminMainPanel = () => {
             <Grid item xs={4}>
                 <h2>Exercises </h2>
 
+                <Link
+                    to={`/admin-page/save-exercise`}
 
+                >
+                    <Add />
+                </Link>
                 <div >
                     <List sx={{ width: '100%', maxWidth: 600, bgcolor: 'white' }}>
                         {Exercises.map((value) => (
@@ -298,12 +303,7 @@ const AdminMainPanel = () => {
                                     </IconButton>
 
                                     <IconButton aria-label="delete" onClick={() => handleDeleteExercise(value.id)}>
-                                        <Link
-                                            to={`/admin-page/save-exercise/${value.id}`}
-                                            state={{ data: value }}
-                                        >
-                                            <Add />
-                                        </Link>
+
                                     </IconButton>
 
                                 </ListItemSecondaryAction>
@@ -322,6 +322,13 @@ const AdminMainPanel = () => {
             <Grid item xs={4}>
                 <h2>Meals </h2>
 
+                <Link
+                    to={`/admin-page/save-meal`}
+                // state={{ data: value }}
+                >
+
+                    <Add />
+                </Link>
                 <div >
                     <List sx={{ width: '100%', maxWidth: 750, bgcolor: 'white' }}>
                         {Meals.map((value) => (
@@ -361,12 +368,7 @@ const AdminMainPanel = () => {
 
                                     </IconButton>
                                     <IconButton aria-label="delete" onClick={() => handleDeleteMeal(value.id)}>
-                                        <Link
-                                            to={`/admin-page/save-meal/${value.id}`}
-                                            state={{ data: value }}
-                                        >
-                                            <Add />
-                                        </Link>
+
 
                                     </IconButton>
                                 </ListItemSecondaryAction>
@@ -375,6 +377,7 @@ const AdminMainPanel = () => {
                     </List>
                     <button onClick={scrollDownMeals}>down</button>
                     <button onClick={scrollUpMeals}>up</button>
+
                     <p>{error3}</p>
 
                 </div>

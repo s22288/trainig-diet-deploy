@@ -34,7 +34,7 @@ const CustomExcercises = (props) => {
     <div id="parent">
 
       <div className="exercise-left">
-      <h3>Main</h3>
+        <h3>Main</h3>
 
         <Card sx={{ maxWidth: 400, backgroundColor: 'gold' }}>
           <CardActionArea>
