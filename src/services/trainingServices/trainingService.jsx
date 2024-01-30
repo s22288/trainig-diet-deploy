@@ -13,6 +13,21 @@ const GetAllTrainings = () => {
 
 };
 
+const GetDataOfEvent=(id)=>{
+    const token = localStorage.getItem('jwtToken');
+
+    return fetch(`https://diet-training-app.link/premium-user/get-events/${id}`, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+        },
+        credentials: 'include',
+    });
+
+}
+
 const GetAllTrainingsWithDays = () => {
     const token = localStorage.getItem('jwtToken');
 
@@ -154,4 +169,4 @@ const DelteteTrainigById = (id) => {
 
 }
 
-export { GetAllTrainings, DelteteTrainigById, GetExerciseseByBodyPartFbw, GetExerciseseByBodyPartSplit, GetExerciseseByBodyPartPushPull, SaveTrainig, AsignTrainingToDay, GetAllTrainingsWithDays, FindMachineById, DeleteTrainingsWithEvents }
+export { GetAllTrainings, DelteteTrainigById, GetExerciseseByBodyPartFbw, GetExerciseseByBodyPartSplit, GetExerciseseByBodyPartPushPull, SaveTrainig, AsignTrainingToDay, GetAllTrainingsWithDays, FindMachineById, DeleteTrainingsWithEvents,GetDataOfEvent }

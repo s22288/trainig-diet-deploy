@@ -41,7 +41,7 @@ const CalendarOfTraining = () => {
 
     }
     function getTrainigsWithDays() {
-        GetAllTrainingsWithDays().then((response) => {
+        GetAllTrainings().then((response) => {
             if (response.ok) {
                 return response.json();
             } else {
@@ -49,15 +49,14 @@ const CalendarOfTraining = () => {
             }
         })
             .then((data) => {
-
-                setMondayTrainings(data.filter((d) => d.trainingEntity.day === 'mon'));
-                setTuesdayTrainings(data.filter((d) => d.trainingEntity.day === 'tue'));
-                setWendsdayTrainings(data.filter((d) => d.trainingEntity.day === 'wen'));
-                setThursdayTrainings(data.filter((d) => d.trainingEntity.day === 'thu'));
-                setFridayTrainings(data.filter((d) => d.trainingEntity.day === 'fri'));
-                setSaturdayTrainings(data.filter((d) => d.trainingEntity.day === 'sat'));
-                setSundayTrainings(data.filter((d) => d.trainingEntity.day === 'sun'));
                 console.log(data)
+                setMondayTrainings(data.filter((d) => d.day === 'mon'));
+                setTuesdayTrainings(data.filter((d) => d.day === 'tue'));
+                setWendsdayTrainings(data.filter((d) => d.day=== 'wen'));
+                setThursdayTrainings(data.filter((d) => d.day=== 'thu'));
+                setFridayTrainings(data.filter((d) => d.day === 'fri'));
+                setSaturdayTrainings(data.filter((d) => d.day === 'sat'));
+                setSundayTrainings(data.filter((d) => d.day === 'sun'));
             })
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
@@ -97,7 +96,7 @@ const CalendarOfTraining = () => {
     }
     useEffect(() => {
 
-        GetAllTrainingsWithDays().then((response) => {
+        GetAllTrainings().then((response) => {
             if (response.ok) {
                 return response.json();
             } else {
@@ -105,15 +104,15 @@ const CalendarOfTraining = () => {
             }
         })
             .then((data) => {
-              console.log(data)
-                
-                setMondayTrainings(data.filter((d) => d.trainingEntity.day === 'mon'));
-                setTuesdayTrainings(data.filter((d) => d.trainingEntity.day === 'tue'));
-                setWendsdayTrainings(data.filter((d) => d.trainingEntity.day === 'wen'));
-                setThursdayTrainings(data.filter((d) => d.trainingEntity.day === 'thu'));
-                setFridayTrainings(data.filter((d) => d.trainingEntity.day=== 'fri'));
-                setSaturdayTrainings(data.filter((d) => d.trainingEntity.day === 'sat'));
-                setSundayTrainings(data.filter((d) => d.trainingEntity.day === 'sun'));
+                console.log(data)
+
+                setMondayTrainings(data.filter((d) => d.day === 'mon'));
+                setTuesdayTrainings(data.filter((d) => d.day === 'tue'));
+                setWendsdayTrainings(data.filter((d) => d.day === 'wen'));
+                setThursdayTrainings(data.filter((d) => d.day === 'thu'));
+                setFridayTrainings(data.filter((d) => d.day === 'fri'));
+                setSaturdayTrainings(data.filter((d) => d.day === 'sat'));
+                setSundayTrainings(data.filter((d) => d.day === 'sun'));
             })
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
@@ -218,9 +217,9 @@ const CalendarOfTraining = () => {
                     <div>
                         <Splide aria-label="My Favorite Images">
                             {wendsdayTrainings && wendsdayTrainings.map((item, index) => (
-                                <SplideSlide>
+                                <SplideSlide key={index}>
 
-                                    <SmallTraining className="emptytrain" key={item.trainingEntity.id} val={item} />
+                                    <SmallTraining className="emptytrain" key={item.id} val={item} />
                                 </SplideSlide>
 
                             ))}
@@ -233,7 +232,7 @@ const CalendarOfTraining = () => {
                         {thursdayTrainings && thursdayTrainings.map(item => (
                             <SplideSlide>
 
-                                <SmallTraining className="emptytrain" key={item.trainingEntity.id} val={item} />
+                                <SmallTraining className="emptytrain" key={item.id} val={item} />
                             </SplideSlide>
 
                         ))}
@@ -245,7 +244,7 @@ const CalendarOfTraining = () => {
                         {fridayTrainings && fridayTrainings.map(item => (
                             <SplideSlide>
 
-                                <SmallTraining className="emptytrain" key={item.trainingEntity.id} val={item} />
+                                <SmallTraining className="emptytrain" key={item.id} val={item} />
                             </SplideSlide>
 
                         ))}
@@ -257,7 +256,7 @@ const CalendarOfTraining = () => {
                         {saturdayTrainings && saturdayTrainings.map(item => (
                             <SplideSlide>
 
-                                <SmallTraining className="emptytrain" key={item.trainingEntity.id} val={item} />
+                                <SmallTraining className="emptytrain" key={item.id} val={item} />
                             </SplideSlide>
 
                         ))}
@@ -269,7 +268,7 @@ const CalendarOfTraining = () => {
                         {sundayTrainings && sundayTrainings.map(item => (
                             <SplideSlide>
 
-                                <SmallTraining className="emptytrain" key={item.trainingEntity.id} val={item} />
+                                <SmallTraining className="emptytrain" key={item.id} val={item} />
                             </SplideSlide>
 
                         ))}

@@ -5,16 +5,21 @@ import * as React from "react";
 
 import { Link } from "react-router-dom";
 import { DelteteTrainigById } from "../../../services/trainingServices/trainingService";
+
 const SmallTraining = (props) => {
     const [isDeleted, setIsDeleted] = useState(false);
     const { localozation, day } = props.val.day;
+    console.log(props)
 
-    const { id, description, exerciseEntitySet } = props.val.trainingEntity;
+    const { id, description, exerciseEntitySet } = props.val;
     const eventTrainig = {
-        training: props.val.trainingEntity,
-        trainingEvent: props.val.day
+        training: props.val.description,
+        trainingEvent: props.val.day,
+        trainingId: props.val.id
     }
+        React.useEffect(()=>{
 
+        },[])
     const handleDelelte = () => {
 
         DelteteTrainigById(id)
