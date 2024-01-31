@@ -203,7 +203,7 @@ const CalendarOfTraining = () => {
                             {tuesdayTrainings && tuesdayTrainings.map((item, index) => (
                                 <SplideSlide key={index}>
                                     <SmallTraining className="emptytrain"
-                                        key={item.trainingEntity.id}
+                                        key={item.id}
                                         val={item}
                                     />
                                 </SplideSlide>
