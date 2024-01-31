@@ -364,7 +364,7 @@ const TrainingCustomization = () => {
                   {firstDay ? (
                     firstDay.map((item, index) => (
                       <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <CustomExcercises onreplace={replaceData} data={item} />
+                        <CustomExcercises onreplace={replaceData1} data={item} />
 
 
                       </div>
