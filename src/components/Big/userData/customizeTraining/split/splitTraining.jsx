@@ -13,7 +13,7 @@ const SplitTraining = (props) => {
 
 
 
-    const replaceData = (index, mainIndex) => {
+    const replaceData1 = (index, mainIndex) => {
         let userDataIndex = firstDay.findIndex((d) => {
             return d.exerciseEntity.id === mainIndex;
         });

@@ -96,7 +96,19 @@ const TrainingCustomization = () => {
     }
     setUserData(updatedUserData);
   };
-
+  const replaceData1 = (index, mainIndex) => {
+    let userDataIndex = firstDay.findIndex((d) => {
+      return d.exerciseEntity.id === mainIndex;
+    });
+    const updatedUserData = [...firstDay];
+    const alternatives = updatedUserData[userDataIndex].alternatives;
+    if (alternatives.length > 0) {
+      let copy = updatedUserData[userDataIndex].exerciseEntity;
+      updatedUserData[userDataIndex].exerciseEntity = alternatives[index];
+      updatedUserData[userDataIndex].alternatives[index] = copy;
+    }
+    setUserData(updatedUserData);
+  };
 
   const replaceData2 = (index, mainIndex) => {
     let userDataIndex = secondDay.findIndex((d) => {
@@ -293,7 +305,7 @@ const TrainingCustomization = () => {
                   {firstDay ? (
                     firstDay.map((item, index) => (
                       <div key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <CustomExcercises onreplace={replaceData} data={item} />
+                        <CustomExcercises onreplace={replaceData1} data={item} />
 
 
                       </div>
