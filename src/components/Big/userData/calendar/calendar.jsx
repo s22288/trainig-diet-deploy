@@ -290,10 +290,10 @@ const CalendarOfTraining = () => {
 
                             <div key={index}>
 
-                                <Card sx={{ height: 130 }}>
+                                <Card sx={{ height: 150 }}>
                                     <CardContent>
 
-                                        <Typography variant="h6" color="text.secondary">
+                                        <Typography variant="h7" color="text.secondary">
                                             Opis:  {item.description}
                                         </Typography>
                                         <Typography variant="body1" color="text.secondary">
