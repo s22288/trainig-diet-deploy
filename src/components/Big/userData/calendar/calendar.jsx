@@ -52,8 +52,8 @@ const CalendarOfTraining = () => {
                 console.log(data)
                 setMondayTrainings(data.filter((d) => d.day === 'mon'));
                 setTuesdayTrainings(data.filter((d) => d.day === 'tue'));
-                setWendsdayTrainings(data.filter((d) => d.day=== 'wen'));
-                setThursdayTrainings(data.filter((d) => d.day=== 'thu'));
+                setWendsdayTrainings(data.filter((d) => d.day === 'wen'));
+                setThursdayTrainings(data.filter((d) => d.day === 'thu'));
                 setFridayTrainings(data.filter((d) => d.day === 'fri'));
                 setSaturdayTrainings(data.filter((d) => d.day === 'sat'));
                 setSundayTrainings(data.filter((d) => d.day === 'sun'));
@@ -180,12 +180,12 @@ const CalendarOfTraining = () => {
                 <button className='clear-button' onClick={clearData}>Clear</button>
                 <div id="mon" className="calendar-day">
                     <button value={'mon'} onClick={chooseDay}>WEEK I</button>
-                    <div className='day-custom'>
+                    <div >
                         <Splide aria-label="My Favorite Images">
                             {mondayTrainings && mondayTrainings.map((item, index) => (
 
                                 <SplideSlide key={index}>
-                                    <SmallTraining key={item.id} val={item} />
+                                    <SmallTraining className="emptytrain" key={item.id} val={item} />
 
                                 </SplideSlide>
 
@@ -337,7 +337,7 @@ const CalendarOfTraining = () => {
 
 
 
-        </div>
+        </div >
     )
 }
 

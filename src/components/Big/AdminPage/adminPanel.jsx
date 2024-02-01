@@ -69,6 +69,7 @@ const AdminMainPanel = () => {
             setError2('no privliges')
             return
         }
+        console.log(id)
         DeleteExerciseByid(id);
         SetExercises((prevUserData) =>
             prevUserData.filter((item) => item.id !== id)
@@ -152,6 +153,7 @@ const AdminMainPanel = () => {
         })
             .then((data) => {
                 SetMeals(data)
+
             })
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
@@ -197,13 +199,15 @@ const AdminMainPanel = () => {
             }
         })
             .then((data) => {
+                console.log(data)
                 SetExercises(data)
+
             })
             .catch((error) => {
                 console.error("Failed to fetch user data", error);
             });;
 
-    }, [])
+    },[])
 
 
 
